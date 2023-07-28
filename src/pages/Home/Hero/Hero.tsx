@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Searching from "../../../components/Searching/Searching";
 import "./Hero.css";
 export default function Hero() {
@@ -18,7 +19,7 @@ export default function Hero() {
         <div className=" mt-4">
           <button
             className="bg-[#16C263] px-2 rounded-md hero-help-container p-6"
-            onClick={() => window.my_modal_3.showModal()}
+            onClick={() => (window as any).my_modal_3.showModal()}
           >
             <h4 className="text-white text-start text-sm my-2">
               Need help finding care?

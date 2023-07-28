@@ -12,18 +12,20 @@ export default function FeaturedSection() {
   const features = featureData.data;
   console.log(features);
   return (
-    <div className="max-w-[1200px]  mx-auto">
-      <h3 className="text-md ">Featured Care Home Groups</h3>
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-        {features.map((feature: any) => (
-          <div className="card hover:border hover:border-red-400  shadow-xl">
-            <img src={feature.img} className="rounded-md" alt="Shoes" />
-            <div className="flex justify-around my-6 items-center">
-              <h2 className="text-[#23527C] text-md">{feature.title}</h2>
-              <img src={feature.logo} alt="" className="w-1/3" />
+    <div className="bg-[#F8F8FF]">
+      <div className="max-w-[1200px] py-10 mx-auto">
+        <h3 className="text-md mb-5">Featured Care Home Groups</h3>
+        <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 ">
+          {features.map((feature: any) => (
+            <div className="card hover:border hover:border-red-400  shadow-xl">
+              <img src={feature.img} className="rounded-md" alt="Shoes" />
+              <div className="flex justify-around my-6 items-center">
+                <h2 className="text-[#23527C] text-md">{feature.title}</h2>
+                <img src={feature.logo} alt="" className="w-1/3" />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
