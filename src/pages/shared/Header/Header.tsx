@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
-import CallHelpLine from "../../../components/CallHelpLine";
+import CallHelpLine from "../../../components/CallHelpLine/CallHelpLine";
 
 export default function Header() {
   return (
