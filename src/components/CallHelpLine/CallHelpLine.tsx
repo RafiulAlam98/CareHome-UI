@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 import "./CallHelpLine.css";
 
@@ -7,7 +8,7 @@ export default function CallHelpLine() {
       {/* You can open the modal using ID.showModal() method */}
       <button
         className="bg-[#16C263] px-2 rounded-md"
-        onClick={() => window.my_modal_3.showModal()}
+        onClick={() => (window as any).my_modal_3.showModal()}
       >
         <span>
           <i className="fa-solid fa-phone-flip mr-2 text-white"></i>
