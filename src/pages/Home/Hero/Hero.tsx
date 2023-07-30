@@ -7,10 +7,7 @@ export default function Hero() {
       <h1 className="text-[#55557B] text-center text-2xl mt-5">
         Reviews for Care Homes, Residential Homes & Nursing Homes
       </h1>
-      <h2 className="text-gray-600 text-center text-md mt-2">
-        The leading UK Care Home review website with 16,808 Care Homes, 16
-        million+ visits per year & 282,461 Care Home reviews
-      </h2>
+
       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="mt-4 lg:col-span-2">
           <Searching></Searching>

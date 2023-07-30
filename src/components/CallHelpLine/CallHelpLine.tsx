@@ -39,7 +39,7 @@ export default function CallHelpLine() {
                   soon as possible."
                 </p>
                 <h3 className="text-xs mt-2 font-normal">
-                  L Gardiner December 2022
+                  {/* L Gardiner December 2022 */}
                 </h3>
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function CallHelpLine() {
               </h3>
               <Link to="" className="text-xl text-[#23527C]">
                 <span className="hover:border-b-2  hover:border-[#23527C]">
-                  0800 808 5820
+                  +880 17100000
                 </span>
               </Link>
               <h4 className="text-xs mb-2 text-gray-400 flex justify-between items-center">
@@ -91,7 +91,7 @@ export default function CallHelpLine() {
               <p className="text-xs text-gray-600 ">
                 Alternatively, email{" "}
                 <Link to="" className="text-blue-600">
-                  carehelp@carehome.co.uk
+                  carehelp@carehome.co.bd
                 </Link>{" "}
                 with a brief outline of your care needs and a member of the team
                 will contact you.
