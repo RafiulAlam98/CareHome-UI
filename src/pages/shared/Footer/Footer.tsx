@@ -19,7 +19,7 @@ export default function Footer() {
           <i className="fa-brands fa-linkedin block mx-2 text-3xl text-[#2073BD]"></i>
         </div>
         <h3
-          className="text-[#2073BD] mr-4 text-sm font-normal text-center mt-3
+          className="text-[#2073BD] mr-4 text-sm font-normal text-center mt-3 mb-2
         "
         >
           © 2023 CAREHOME.CO.BD
