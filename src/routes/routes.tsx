@@ -4,6 +4,12 @@ import Home from "../pages/Home/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import Main from "../Layout/Main";
 import FeatureDetails from "../pages/FeatureDetails/FeatureDetails";
+import Websites from "../pages/Websites/Websites";
+import Jobs from "../pages/Jobs/Jobs";
+import About from "../pages/About/About";
+import SignUp from "../pages/SignUp/SignUp";
+import Login from "../pages/Login/Login";
+
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +23,27 @@ const routes = createBrowserRouter([
         path: "/details/:id",
         element: <FeatureDetails />,
       },
+      {
+        path: "/website",
+        element: <Websites />,
+      },
+      {
+        path: "/jobs",
+        element: <Jobs />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
     ],
+  },
+  {
+    path: "/sign-up",
+    element: <SignUp />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "*",

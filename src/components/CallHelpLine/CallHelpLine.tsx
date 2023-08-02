@@ -5,7 +5,6 @@ import "./CallHelpLine.css";
 export default function CallHelpLine() {
   return (
     <>
-      {/* You can open the modal using ID.showModal() method */}
       <button
         className="bg-[#16C263] px-2 rounded-md"
         onClick={() => (window as any).my_modal_3.showModal()}

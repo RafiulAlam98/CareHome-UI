@@ -23,11 +23,11 @@ export default function Header() {
           <Link to="" className="text-sm mr-4 text-[#2073BD]">
             Care Advice
           </Link>
-          <Link to="" className="text-sm mr-4 text-[#2073BD]">
+          <Link to="/jobs" className="text-sm mr-4 text-[#2073BD]">
             Job Search
           </Link>
-          <Link to="" className="text-sm mr-6 text-[#2073BD]">
-            Industry Resources
+          <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
+            About
           </Link>
         </div>
 
@@ -128,18 +128,18 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    to=""
+                    to="/login"
                     className="font-normal hover:bg-[#01284A] hover:text-white"
                   >
-                    Groups/Owners
+                    Login
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to=""
+                    to="/sign-up"
                     className="font-normal hover:bg-[#01284A] hover:text-white"
                   >
-                    Care HelpLine
+                    Sign Up
                   </Link>
                 </li>
                 <li>
@@ -202,13 +202,19 @@ export default function Header() {
                 </details>
               </li>
               <li>
-                <Link to="" className="text-white hover:text-white text-xs">
-                  Groups/Owners
+                <Link
+                  to="/login"
+                  className="text-white hover:text-white text-xs"
+                >
+                  Login
                 </Link>
               </li>
               <li>
-                <Link to="" className="text-white hover:text-white text-xs">
-                  Care HelpLine
+                <Link
+                  to="/sign-up"
+                  className="text-white hover:text-white text-xs"
+                >
+                  Sign Up
                 </Link>
               </li>
               <li>
