@@ -145,7 +145,7 @@ const careHomeContact = [
 export default function FooterItems() {
   return (
     <div className="bg-[#2073BD]">
-      <div className="max-w-[1100px] py-10 mx-auto grid gap-3 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3">
+      <div className="max-w-[1200px] py-10 mx-auto grid gap-3 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3">
         <div className="mx-auto">
           <h1 className="text-white font-semibold mb-1 border-b-2 border-b-white ">
             Care Search

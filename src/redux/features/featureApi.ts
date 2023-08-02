@@ -5,7 +5,10 @@ const featureApi = api.injectEndpoints({
     getFeature: builder.query({
       query: () => `all-careHome`,
     }),
+    getSingleFeature: builder.query({
+      query: (id) => `all-careHome/${id}`,
+    }),
   }),
 });
 
-export const { useGetFeatureQuery } = featureApi;
+export const { useGetFeatureQuery, useGetSingleFeatureQuery } = featureApi;
