@@ -1,6 +1,12 @@
 import { Link, useParams } from "react-router-dom";
+
 import { useGetSingleFeatureQuery } from "../../redux/features/featureApi";
 import Loading from "../Loading/Loading";
+import HeroDetailsLink from "../HeroDetailsLink/HeroDetailsLink";
+import FeatureImages from "../FeatueImages/FeatureImages";
+import Service from "../Service/Service";
+import ProfessionalInfo from "../ProfessionalInfo/ProfessionalInfo";
+import FeatureFunding from "../FeatureFunding/FeatureFunding";
 
 const icons = [
   {
@@ -8,19 +14,19 @@ const icons = [
     icon: <i className="fa-brands fa-facebook"></i>,
   },
   {
-    id: 1,
+    id: 2,
     icon: <i className="fa-brands fa-twitter"></i>,
   },
   {
-    id: 1,
+    id: 3,
     icon: <i className="fa-brands fa-linkedin"></i>,
   },
   {
-    id: 1,
+    id: 4,
     icon: <i className="fa-brands fa-whatsapp"></i>,
   },
   {
-    id: 1,
+    id: 5,
     icon: <i className="fa-solid fa-share"></i>,
   },
 ];
@@ -32,7 +38,19 @@ export default function HeroDetails() {
     return <Loading />;
   }
   console.log(details.data);
-  const { title, location, logo, awardRecognition } = details.data;
+  const {
+    title,
+    location,
+    logo,
+    awardRecognition,
+    quote,
+    careHomeService,
+    owner,
+    personIncharge,
+    localAuthority,
+    admissionRestrictionAge,
+    room,
+  } = details.data;
   return (
     <div className="bg-[#FEFEFE] my-6">
       <div className="flex justify-between items-center">
@@ -69,6 +87,28 @@ export default function HeroDetails() {
             <Link to=""> {icon.icon}</Link>
           </button>
         ))}
+      </div>
+
+      <HeroDetailsLink />
+      <FeatureImages />
+
+      <div className="mt-8">{quote}</div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 my-8">
+        <div>
+          <Service careHomeService={careHomeService} />
+        </div>
+        <div>
+          <ProfessionalInfo
+            owner={owner}
+            personIncharge={personIncharge}
+            localAuthority={localAuthority}
+            admissionRestrictionAge={admissionRestrictionAge}
+            room={room}
+          />
+        </div>
+        <div>
+          <FeatureFunding />
+        </div>
       </div>
     </div>
   );
