@@ -56,7 +56,7 @@ export default function Header() {
                 <a>Portfolio</a>
               </li>
               <li>
-                <a>About</a>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </div>
