@@ -9,6 +9,8 @@ import Jobs from "../pages/Jobs/Jobs";
 import About from "../pages/About/About";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
+import DashboardMain from "../Layout/DashboardMain";
+import AddFeature from "../pages/Dashboard/AddFeature/AddFeature";
 
 const routes = createBrowserRouter([
   {
@@ -34,6 +36,16 @@ const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardMain />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <AddFeature />,
       },
     ],
   },

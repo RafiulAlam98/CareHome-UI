@@ -29,6 +29,9 @@ export default function Header() {
           <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
             About
           </Link>
+          <Link to="/dashboard" className="text-sm mr-4 text-[#2073BD]">
+            Dashboard
+          </Link>
         </div>
 
         <div className="user-container">
