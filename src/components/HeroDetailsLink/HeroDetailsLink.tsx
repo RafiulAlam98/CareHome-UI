@@ -8,7 +8,7 @@ export default function HeroDetailsLink() {
     <div className="flex justify-around items-center my-2 bg-gray-100 py-6 rounded">
       <BookATour />
       <button className="bg-[#2073BD] text-sm text-white text-semibold font-normal px-2 py-1">
-        <Link to="/website"> Visit Website</Link>
+        <Link to="/website">Visit Website</Link>
       </button>
       <SendEmail />
       <button
