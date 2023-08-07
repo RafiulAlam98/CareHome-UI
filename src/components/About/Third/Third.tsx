@@ -1,12 +1,9 @@
+import aboutuser from "../../../assets/aboutuser.png";
 export default function Third() {
   return (
     <div className=" grid md:grid-cols-2 sm:grid-cols-1 gap-4 mt-4">
       <div>
-        <img
-          src="https://e-mart-e2bb8.web.app/static/media/shop.59e02db01c9aa9a9f71c.avif"
-          alt=""
-          className="h-3/4 w-full"
-        />
+        <img src={aboutuser} alt="" className="h-3/4 w-full" />
       </div>
       <div className="mt-8 pl-3 justify-center items-center">
         <h1 className="text-2xl font-semibold">

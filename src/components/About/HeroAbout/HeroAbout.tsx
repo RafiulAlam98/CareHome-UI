@@ -1,3 +1,4 @@
+import heroabout from "../../../assets/heroabout.png";
 export default function HeroAbout() {
   return (
     <div className=" grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 mb-4">
@@ -15,11 +16,7 @@ export default function HeroAbout() {
         </p>
       </div>
       <div>
-        <img
-          src="https://e-mart-e2bb8.web.app/static/media/aboutus.7f9a27428f447c2d8b44.avif"
-          alt=""
-          className="h-3/4 w-full"
-        />
+        <img src={heroabout} alt="" className="h-3/4 w-full" />
       </div>
     </div>
   );

@@ -2,8 +2,11 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { useUserSignInMutation } from "../../redux/users/usersApi";
+import Loading from "../../components/Loading/Loading";
 
 export default function Login() {
+  const [userSignIn, { isLoading, isError }] = useUserSignInMutation();
   const {
     register,
     handleSubmit,
@@ -12,10 +15,15 @@ export default function Login() {
   const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
-    if (data !== null) {
-      toast("User logged in Successfully");
-      navigate("/");
-    }
+    userSignIn(data).then((res: any) => {
+      console.log(res.data.data.accessToken);
+      const token = res.data.data.accessToken;
+      localStorage.setItem("accessToken", token);
+      if (token) {
+        toast(res.data.message);
+        navigate("/");
+      }
+    });
   };
   return (
     <div className="h-[500px] background  flex justify-center items-center">
@@ -39,18 +47,29 @@ export default function Login() {
 
           <div className="form-control w-full ">
             <label className="label">
-              <span className="label-text text-black">Password</span>
+              <span className="label-text text-black">
+                What is your password?
+              </span>
             </label>
-            <input type="password" className="input input-bordered w-full " />
+            <input
+              {...register("password", {
+                required: "password is required",
+              })}
+              type="password"
+              className="input input-bordered w-full "
+            />
             {errors.password && (
               <span className="text-black">This field is required</span>
             )}
           </div>
-
-          <input
-            type="submit"
-            className="btn w-full btn-accent text-black my-3"
-          />
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <input
+              type="submit"
+              className="btn w-full btn-accent text-white my-3"
+            />
+          )}
         </form>
         <p className="text-black">
           Not an account?
@@ -58,10 +77,12 @@ export default function Login() {
             Sign Up
           </Link>
         </p>
-        <div className="divider text-black font-bold">OR</div>
+
+        {isError && <p>Something Went wrong</p>}
+        {/* <div className="divider text-black font-bold">OR</div>
         <button className="btn btn-outline bg-white w-full">
           Continue With Google
-        </button>
+        </button> */}
       </div>
     </div>
   );

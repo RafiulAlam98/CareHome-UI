@@ -3,10 +3,10 @@ import { api } from "../api/apiSlice";
 const featureApi = api.injectEndpoints({
   endpoints: (builder) => ({
     getFeature: builder.query({
-      query: () => `all-careHome`,
+      query: () => `careHome/all-careHome`,
     }),
     getSingleFeature: builder.query({
-      query: (id) => `all-careHome/${id}`,
+      query: (id) => `careHome/all-careHome/${id}`,
     }),
   }),
 });
