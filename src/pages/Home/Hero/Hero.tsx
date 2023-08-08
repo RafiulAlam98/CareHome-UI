@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Searching from "../../../components/Searching/Searching";
+
 import "./Hero.css";
 export default function Hero() {
   return (
@@ -9,10 +9,6 @@ export default function Hero() {
       </h1>
 
       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="mt-4 lg:col-span-2">
-          <Searching></Searching>
-        </div>
-
         <div className=" mt-4">
           <button
             className="bg-[#16C263] px-2 rounded-md hero-help-container p-6"

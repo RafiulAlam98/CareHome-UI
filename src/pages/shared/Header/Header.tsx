@@ -3,6 +3,10 @@ import "./Header.css";
 import CallHelpLine from "../../../components/CallHelpLine/CallHelpLine";
 
 export default function Header() {
+  const user = localStorage.getItem("accessToken");
+  const handleLogout = () => {
+    return localStorage.removeItem("accessToken");
+  };
   return (
     <>
       <div className="header-container max-w-[1200px] mx-auto">
@@ -126,22 +130,33 @@ export default function Header() {
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <Link
-                    to="/login"
-                    className="font-normal hover:bg-[#01284A] hover:text-white"
+                {user === null ? (
+                  <>
+                    <li>
+                      <Link
+                        to="/login"
+                        className="font-normal hover:bg-[#01284A] hover:text-white"
+                      >
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/sign-up"
+                        className="font-normal hover:bg-[#01284A] hover:text-white"
+                      >
+                        Sign Up
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <button
+                    className="font-normal  hover:bg-[#01284A] hover:text-white"
+                    onClick={() => handleLogout()}
                   >
-                    Login
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/sign-up"
-                    className="font-normal hover:bg-[#01284A] hover:text-white"
-                  >
-                    Sign Up
-                  </Link>
-                </li>
+                    Logout
+                  </button>
+                )}
                 <li>
                   <Link
                     to=""
@@ -201,22 +216,33 @@ export default function Header() {
                   </ul>
                 </details>
               </li>
-              <li>
-                <Link
-                  to="/login"
-                  className="text-white hover:text-white text-xs"
+              {user === null ? (
+                <>
+                  <li>
+                    <Link
+                      to="/login"
+                      className="text-white hover:text-white  text-xs"
+                    >
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/sign-up"
+                      className="text-white hover:text-white  text-xs"
+                    >
+                      Sign Up
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <button
+                  className="text-white hover:text-white  text-xs"
+                  onClick={() => handleLogout()}
                 >
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/sign-up"
-                  className="text-white hover:text-white text-xs"
-                >
-                  Sign Up
-                </Link>
-              </li>
+                  logout
+                </button>
+              )}
               <li>
                 <Link to="" className="text-white hover:text-white text-xs">
                   Awards
