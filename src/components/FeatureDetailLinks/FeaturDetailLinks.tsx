@@ -3,12 +3,12 @@ import BookATour from "../BookATour/BookATour";
 import SendEmail from "../SendEmail/SendEmail";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export default function HeroDetailsLink({ website }: any) {
+export default function HeroDetailsLink() {
   return (
     <div className="flex justify-around items-center my-2 bg-gray-100 py-6 rounded">
       <BookATour />
       <button className="bg-[#2073BD] text-sm text-white text-semibold font-normal px-2 py-1">
-        <Link to={website}>Visit Website</Link>
+        <Link to="https://www.carehome.co.uk/">Visit Website</Link>
       </button>
       <SendEmail />
       <button
