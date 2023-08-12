@@ -1,12 +1,11 @@
 import { Link, useParams } from "react-router-dom";
-
 import { useGetSingleFeatureQuery } from "../../redux/features/featureApi";
 import Loading from "../Loading/Loading";
 import HeroDetailsLink from "../HeroDetailsLink/HeroDetailsLink";
 import FeatureImages from "../FeatueImages/FeatureImages";
-import Service from "../Service/Service";
 import ProfessionalInfo from "../ProfessionalInfo/ProfessionalInfo";
 import FeatureFunding from "../FeatureFunding/FeatureFunding";
+import Performance from "../Performance/Performance";
 
 const icons = [
   {
@@ -38,15 +37,15 @@ export default function HeroDetails() {
     return <Loading />;
   }
   console.log(details.data);
+  const images = details.data.img;
   const {
     title,
     location,
     logo,
-    awardRecognition,
     quote,
-    careHomeService,
     owner,
     personIncharge,
+    performance,
     localAuthority,
     admissionRestrictionAge,
     room,
@@ -61,9 +60,6 @@ export default function HeroDetails() {
         <div className="flex justify-between items-center mr-2">
           <div>
             <img src={logo} alt="" />
-          </div>
-          <div>
-            <img className="w-1/2" src={awardRecognition.awardLogo} alt="" />
           </div>
         </div>
       </div>
@@ -90,13 +86,10 @@ export default function HeroDetails() {
       </div>
 
       <HeroDetailsLink />
-      <FeatureImages />
+      <FeatureImages images={images} />
 
       <div className="mt-8">{quote}</div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 my-8">
-        <div>
-          <Service careHomeService={careHomeService} />
-        </div>
         <div>
           <ProfessionalInfo
             owner={owner}
@@ -110,6 +103,7 @@ export default function HeroDetails() {
           <FeatureFunding />
         </div>
       </div>
+      <Performance performance={performance} />
     </div>
   );
 }
