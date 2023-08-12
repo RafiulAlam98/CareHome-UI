@@ -165,14 +165,14 @@ export default function Header() {
                     Awards
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
-                    to=""
+                    to="/reviews"
                     className="font-normal hover:bg-[#01284A] hover:text-white"
                   >
                     Submit a Review
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -248,11 +248,11 @@ export default function Header() {
                   Awards
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="" className="text-white hover:text-white text-xs">
                   Submit a Review
                 </Link>
-              </li>
+              </li> */}
             </ul>
             <CallHelpLine />
           </div>

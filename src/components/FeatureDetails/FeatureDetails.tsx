@@ -1,11 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import { useGetSingleFeatureQuery } from "../../redux/features/featureApi";
 import Loading from "../Loading/Loading";
-import HeroDetailsLink from "../HeroDetailsLink/HeroDetailsLink";
+import HeroDetailsLink from "../FeatureDetailLinks/FeaturDetailLinks";
 import FeatureImages from "../FeatueImages/FeatureImages";
 import ProfessionalInfo from "../ProfessionalInfo/ProfessionalInfo";
 import FeatureFunding from "../FeatureFunding/FeatureFunding";
 import Performance from "../Performance/Performance";
+import Reviews from "../Reviews/Reviews";
 
 const icons = [
   {
@@ -39,6 +40,7 @@ export default function HeroDetails() {
   console.log(details.data);
   const images = details.data.img;
   const {
+    _id,
     title,
     location,
     logo,
@@ -49,7 +51,9 @@ export default function HeroDetails() {
     localAuthority,
     admissionRestrictionAge,
     room,
+    website,
   } = details.data;
+
   return (
     <div className="bg-[#FEFEFE] my-6">
       <div className="flex justify-between items-center">
@@ -68,9 +72,11 @@ export default function HeroDetails() {
         <button className="text-sm border-b-2 border-b-black font-normal">
           <i className="fa-solid fa-heart mr-1"></i> Save
         </button>
-        <button className="ml-5 text-sm border-b-2 border-b-black">
-          <i className="fa-regular fa-pen-to-square mr-1  font-normal"></i>{" "}
-          Submit a Review
+        <button className=" ml-5 text-sm border-b-2 border-b-black">
+          <Link to={`/reviews/${_id}`}>
+            <i className="fa-regular fa-pen-to-square mr-1  font-normal"></i>{" "}
+            Submit a Review
+          </Link>
         </button>
       </div>
 
@@ -85,7 +91,7 @@ export default function HeroDetails() {
         ))}
       </div>
 
-      <HeroDetailsLink />
+      <HeroDetailsLink website={website} />
       <FeatureImages images={images} />
 
       <div className="mt-8">{quote}</div>
@@ -103,6 +109,7 @@ export default function HeroDetails() {
           <FeatureFunding />
         </div>
       </div>
+      <Reviews id={_id} />
       <Performance performance={performance} />
     </div>
   );

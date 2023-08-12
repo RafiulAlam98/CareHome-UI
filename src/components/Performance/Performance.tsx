@@ -2,7 +2,7 @@
 export default function Performance({ performance }: any) {
   const { caring, effective, responsive, safe } = performance;
   return (
-    <section className="border">
+    <section className="border mt-8">
       <h1 className="border text-2xl p-4 bg-[#F8F8FF]">Performance</h1>
       <h2 className="text-xl m-4">Care Quality Commission (CQC) Rating</h2>
 

@@ -5,6 +5,6 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://care-home-backend.vercel.app/api/v1/",
   }),
-  tagTypes: ["comments", "users"],
+  tagTypes: ["comments", "users", "reviews"],
   endpoints: () => ({}),
 });

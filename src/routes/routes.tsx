@@ -11,6 +11,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import DashboardMain from "../Layout/DashboardMain";
 import AddFeature from "../pages/Dashboard/AddFeature/AddFeature";
+import AddReview from "../components/Reviews/AddReview";
 
 const routes = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/reviews/:id",
+        element: <AddReview />,
       },
     ],
   },
