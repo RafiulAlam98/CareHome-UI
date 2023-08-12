@@ -7,6 +7,7 @@ import ProfessionalInfo from "../ProfessionalInfo/ProfessionalInfo";
 import FeatureFunding from "../FeatureFunding/FeatureFunding";
 import Performance from "../Performance/Performance";
 import Reviews from "../Reviews/Reviews";
+import Award from "../Award/Award";
 
 const icons = [
   {
@@ -111,6 +112,7 @@ export default function HeroDetails() {
       </div>
       <Reviews id={_id} />
       <Performance performance={performance} />
+      <Award id={_id} />
     </div>
   );
 }
