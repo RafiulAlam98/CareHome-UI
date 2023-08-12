@@ -8,7 +8,19 @@ const featureApi = api.injectEndpoints({
     getSingleFeature: builder.query({
       query: (id) => `careHome/all-careHome/${id}`,
     }),
+    addFeature: builder.mutation({
+      query: (data) => ({
+        url: `careHome/add-careHome`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["careHome"],
+    }),
   }),
 });
 
-export const { useGetFeatureQuery, useGetSingleFeatureQuery } = featureApi;
+export const {
+  useGetFeatureQuery,
+  useGetSingleFeatureQuery,
+  useAddFeatureMutation,
+} = featureApi;

@@ -21,15 +21,10 @@ export default function Header() {
         </div>
 
         <div className="mr-20">
-          <Link to="" className="text-sm mr-4 text-[#2073BD]">
-            Care Search
+          <Link to="/dashboard" className="text-sm mr-4 text-[#2073BD]">
+            Dashboard
           </Link>
-          <Link to="" className="text-sm mr-4 text-[#2073BD]">
-            Care Advice
-          </Link>
-          <Link to="/jobs" className="text-sm mr-4 text-[#2073BD]">
-            Job Search
-          </Link>
+
           <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
             About
           </Link>
@@ -96,40 +91,7 @@ export default function Header() {
                     Care Homes
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to=""
-                    className="font-normal hover:bg-[#01284A] hover:text-white "
-                  >
-                    Other Care Settings
-                  </Link>
-                  <ul className="p-1">
-                    <li>
-                      <Link
-                        to=""
-                        className="font-normal hover:bg-[#01284A] hover:text-white"
-                      >
-                        Extra Care Housing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to=""
-                        className="font-normal hover:bg-[#01284A] hover:text-white"
-                      >
-                        Adult Day Care Centres
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to=""
-                        className="font-normal hover:bg-[#01284A] hover:text-white"
-                      >
-                        Mental Health Hospital
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
+
                 {user === null ? (
                   <>
                     <li>
@@ -157,14 +119,7 @@ export default function Header() {
                     Logout
                   </button>
                 )}
-                <li>
-                  <Link
-                    to=""
-                    className="font-normal hover:bg-[#01284A] hover:text-white"
-                  >
-                    Awards
-                  </Link>
-                </li>
+
                 {/* <li>
                   <Link
                     to="/reviews"
@@ -183,39 +138,7 @@ export default function Header() {
                   Care Homes
                 </Link>
               </li>
-              <li tabIndex={0}>
-                <details>
-                  <summary className="text-white hover:text-white text-xs">
-                    Other Care Settings
-                  </summary>
-                  <ul className="p-1 border border-[#1D3565]  rounded-none">
-                    <li>
-                      <Link
-                        to=""
-                        className="text-xs text-[#1D3565] font-normal hover:bg-[#01284A] hover:text-white"
-                      >
-                        Extra Care Housing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to=""
-                        className="text-xs text-[#1D3565] font-normal hover:bg-[#01284A] hover:text-white"
-                      >
-                        Adult Day Care Centres
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to=""
-                        className="text-xs text-[#1D3565] font-normal hover:bg-[#01284A] hover:text-white"
-                      >
-                        Mental Health Hospital
-                      </Link>
-                    </li>
-                  </ul>
-                </details>
-              </li>
+
               {user === null ? (
                 <>
                   <li>
@@ -243,11 +166,7 @@ export default function Header() {
                   logout
                 </button>
               )}
-              <li>
-                <Link to="" className="text-white hover:text-white text-xs">
-                  Awards
-                </Link>
-              </li>
+
               {/* <li>
                 <Link to="" className="text-white hover:text-white text-xs">
                   Submit a Review

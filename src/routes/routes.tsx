@@ -10,8 +10,8 @@ import About from "../pages/About/About";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import DashboardMain from "../Layout/DashboardMain";
-import AddFeature from "../pages/Dashboard/AddFeature/AddFeature";
 import AddReview from "../components/Reviews/AddReview";
+import AddFeature from "../pages/Dashboard/AddFeature/AddFeature";
 
 const routes = createBrowserRouter([
   {
@@ -44,16 +44,7 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/dashboard",
-    element: <DashboardMain />,
-    children: [
-      {
-        path: "/dashboard",
-        element: <AddFeature />,
-      },
-    ],
-  },
+
   {
     path: "/sign-up",
     element: <SignUp />,
@@ -65,6 +56,18 @@ const routes = createBrowserRouter([
   {
     path: "*",
     element: <NotFound />,
+  },
+
+  {
+    path: "/dashboard",
+    element: <DashboardMain />,
+
+    children: [
+      {
+        path: "/dashboard",
+        element: <AddFeature />,
+      },
+    ],
   },
 ]);
 export default routes;
