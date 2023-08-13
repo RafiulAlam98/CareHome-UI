@@ -16,9 +16,11 @@ export default function Login() {
 
   const onSubmit = (data: any) => {
     userSignIn(data).then((res: any) => {
-      console.log(res.data.data.accessToken);
+      // console.log(res.data.data.userRole);
+      const role = res.data.data.userRole;
       const token = res.data.data.accessToken;
       localStorage.setItem("accessToken", token);
+      localStorage.setItem("user", role);
       if (token) {
         toast(res.data.message);
         navigate("/");

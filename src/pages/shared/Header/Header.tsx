@@ -3,9 +3,11 @@ import "./Header.css";
 import CallHelpLine from "../../../components/CallHelpLine/CallHelpLine";
 
 export default function Header() {
-  const user = localStorage.getItem("accessToken");
+  // const user = localStorage.getItem("accessToken");
+  const role = localStorage.getItem("user");
+  console.log(role);
   const handleLogout = () => {
-    return localStorage.removeItem("accessToken");
+    return localStorage.removeItem("user");
   };
   return (
     <>
@@ -21,9 +23,11 @@ export default function Header() {
         </div>
 
         <div className="mr-20">
-          <Link to="/dashboard" className="text-sm mr-4 text-[#2073BD]">
-            Dashboard
-          </Link>
+          {role === "admin" && (
+            <Link to="/dashboard" className="text-sm mr-4 text-[#2073BD]">
+              Dashboard
+            </Link>
+          )}
 
           <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
             About
@@ -92,7 +96,7 @@ export default function Header() {
                   </Link>
                 </li>
 
-                {user === null ? (
+                {role === null ? (
                   <>
                     <li>
                       <Link
@@ -139,7 +143,7 @@ export default function Header() {
                 </Link>
               </li>
 
-              {user === null ? (
+              {role === null ? (
                 <>
                   <li>
                     <Link
