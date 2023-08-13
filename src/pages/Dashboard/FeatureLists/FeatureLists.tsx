@@ -1,9 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Loading from "../../../components/Loading/Loading";
 import { useGetFeatureQuery } from "../../../redux/features/featureApi";
 
 export default function FeatureLists() {
-  const { data } = useGetFeatureQuery(undefined);
-  console.log(data);
+  const { data, isLoading } = useGetFeatureQuery(undefined);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   const features = data.data;
   return (
     <div className="min-h-screen">

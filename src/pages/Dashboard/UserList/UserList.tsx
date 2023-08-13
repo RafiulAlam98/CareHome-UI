@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Loading from "../../../components/Loading/Loading";
 import { useGetAllUserQuery } from "../../../redux/users/usersApi";
 
 export default function UserList() {
-  const { data } = useGetAllUserQuery(undefined);
-  console.log(data.data);
+  const { data, isLoading } = useGetAllUserQuery(undefined);
+  if (isLoading) {
+    return <Loading />;
+  }
+  console.log(data);
   const users = data.data;
   return (
     <div className="min-h-screen">
@@ -21,7 +25,7 @@ export default function UserList() {
               <th>Phone</th>
             </tr>
           </thead>
-          {users.map((user: any, index: number) => (
+          {users?.map((user: any, index: number) => (
             <tbody key={user._id}>
               <tr>
                 <th>{index + 1}</th>
