@@ -2,6 +2,9 @@ import { api } from "../api/apiSlice";
 
 const userApi = api.injectEndpoints({
   endpoints: (builder) => ({
+    getAllUser: builder.query({
+      query: () => `users/all-user`,
+    }),
     userSignUp: builder.mutation({
       query: (data) => ({
         url: `auth/sign-up/create-user`,
@@ -21,4 +24,8 @@ const userApi = api.injectEndpoints({
   }),
 });
 
-export const { useUserSignUpMutation, useUserSignInMutation } = userApi;
+export const {
+  useUserSignUpMutation,
+  useUserSignInMutation,
+  useGetAllUserQuery,
+} = userApi;

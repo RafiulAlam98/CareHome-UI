@@ -22,6 +22,9 @@ export default function DashboardMain() {
           <button className="text-sm bg-slate-400 p-2 text-white  rounded my-1 hover:bg-teal-400">
             <Link to="/dashboard/feature-list">All Features</Link>
           </button>
+          <button className="text-sm bg-slate-400 p-2 text-white  rounded my-1 hover:bg-teal-400">
+            <Link to="/dashboard/user-list">All Users</Link>
+          </button>
         </ul>
       </div>
     </div>

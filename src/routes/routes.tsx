@@ -15,6 +15,7 @@ import AddFeature from "../pages/Dashboard/AddFeature/AddFeature";
 import AddNewsEvent from "../pages/Dashboard/AddNewsEvent/AddNewsEvent";
 import AddAwards from "../pages/Dashboard/AddAwards/AddAwards";
 import FeatureLists from "../pages/Dashboard/FeatureLists/FeatureLists";
+import UserList from "../pages/Dashboard/UserList/UserList";
 
 const routes = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard/feature-list",
         element: <FeatureLists />,
+      },
+      {
+        path: "/dashboard/user-list",
+        element: <UserList />,
       },
       {
         path: "/dashboard/news-event/:id",

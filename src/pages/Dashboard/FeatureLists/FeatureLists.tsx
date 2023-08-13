@@ -3,7 +3,7 @@ import { useGetFeatureQuery } from "../../../redux/features/featureApi";
 
 export default function FeatureLists() {
   const { data } = useGetFeatureQuery(undefined);
-  console.log(data.data);
+  console.log(data);
   const features = data.data;
   return (
     <div className="min-h-screen">
