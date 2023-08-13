@@ -38,7 +38,7 @@ export default function HeroDetails() {
   if (isLoading) {
     return <Loading />;
   }
-  console.log(details.data);
+  // console.log(details.data);
   const images = details.data.img;
   const {
     _id,
@@ -52,7 +52,6 @@ export default function HeroDetails() {
     localAuthority,
     admissionRestrictionAge,
     room,
-    website,
   } = details.data;
 
   return (
@@ -92,8 +91,8 @@ export default function HeroDetails() {
         ))}
       </div>
 
-      <HeroDetailsLink website={website} />
-      <FeatureImages images={images} />
+      <HeroDetailsLink id={_id} />
+      <FeatureImages images={images} id={_id} />
 
       <div className="mt-8">{quote}</div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 my-8">

@@ -16,7 +16,7 @@ export default function Reviews({ id }: any) {
   }
 
   const reviews = data.data;
-  console.log(reviews);
+
   return (
     <section className="border mt-6">
       <h1 className="border text-2xl p-4 bg-[#F8F8FF] border-b border-[#2073BD] text-[#2073BD]">

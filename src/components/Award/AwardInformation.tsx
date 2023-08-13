@@ -2,7 +2,7 @@
 export default function AwardInformation({ award }: any) {
   console.log(award);
   const { awardTitle, awardDescription } = award;
-  console.log(awardTitle, awardDescription);
+  console.log(award);
   return (
     <section className="border p-4">
       <h1 className="font-medium text-lg my-1">

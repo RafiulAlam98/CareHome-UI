@@ -5,13 +5,16 @@ import NotFound from "../pages/NotFound/NotFound";
 import Main from "../Layout/Main";
 import FeatureDetails from "../pages/FeatureDetails/FeatureDetails";
 import Websites from "../pages/Websites/Websites";
-import Jobs from "../pages/Jobs/Jobs";
+
 import About from "../pages/About/About";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import DashboardMain from "../Layout/DashboardMain";
 import AddReview from "../components/Reviews/AddReview";
 import AddFeature from "../pages/Dashboard/AddFeature/AddFeature";
+import AddNewsEvent from "../pages/Dashboard/AddNewsEvent/AddNewsEvent";
+import AddAwards from "../pages/Dashboard/AddAwards/AddAwards";
+import FeatureLists from "../pages/Dashboard/FeatureLists/FeatureLists";
 
 const routes = createBrowserRouter([
   {
@@ -30,10 +33,10 @@ const routes = createBrowserRouter([
         path: "/website",
         element: <Websites />,
       },
-      {
-        path: "/jobs",
-        element: <Jobs />,
-      },
+      // {
+      //   path: "/jobs",
+      //   element: <Jobs />,
+      // },
       {
         path: "/about",
         element: <About />,
@@ -66,6 +69,18 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard",
         element: <AddFeature />,
+      },
+      {
+        path: "/dashboard/feature-list",
+        element: <FeatureLists />,
+      },
+      {
+        path: "/dashboard/news-event/:id",
+        element: <AddNewsEvent />,
+      },
+      {
+        path: "/dashboard/award/:id",
+        element: <AddAwards />,
       },
     ],
   },

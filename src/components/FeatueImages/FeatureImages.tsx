@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Slider from "react-slick";
+// import { useGetImagesQuery } from "../../redux/images/ImageApi";
 
-export default function FeatureImages({ images }: any) {
+export default function FeatureImages({ id, images }: any) {
+  console.log(id);
+  // const { data } = useGetImagesQuery(id);
+  // const images = data.img;
   const settings = {
     dots: true,
     infinite: true,
@@ -13,7 +17,7 @@ export default function FeatureImages({ images }: any) {
     <>
       <Slider {...settings}>
         {images.map((image: any) => (
-          <div className="card w-100 glass my-4">
+          <div key={image._id} className="card w-100 glass my-4">
             <figure>
               <img src={image} alt="car!" />
             </figure>

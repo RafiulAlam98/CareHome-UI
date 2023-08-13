@@ -5,8 +5,6 @@ import AwardInformation from "./AwardInformation";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default function Award({ id }: any) {
-  console.log(id);
-
   const { data, error, isLoading } = useGetAwardQuery(id);
   if (isLoading) {
     return <Loading />;
@@ -17,7 +15,6 @@ export default function Award({ id }: any) {
   }
 
   const awards = data?.data;
-  console.log(awards);
 
   return (
     <section className="border mt-5">
