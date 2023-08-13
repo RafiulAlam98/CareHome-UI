@@ -11,8 +11,6 @@ export default function Reviews({ id }: any) {
     return <Loading />;
   } else if (error) {
     return toast("Something Error happened");
-  } else {
-    toast(data.message);
   }
 
   const reviews = data.data;

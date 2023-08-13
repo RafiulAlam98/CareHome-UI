@@ -5,6 +5,13 @@ const featureApi = api.injectEndpoints({
     getFeature: builder.query({
       query: () => `careHome/all-careHome`,
     }),
+    deleteSingleCareHome: builder.mutation({
+      query: (id) => ({
+        url: `careHome/all-careHome/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["careHome"],
+    }),
     getSingleFeature: builder.query({
       query: (id) => `careHome/all-careHome/${id}`,
     }),
@@ -23,4 +30,5 @@ export const {
   useGetFeatureQuery,
   useGetSingleFeatureQuery,
   useAddFeatureMutation,
+  useDeleteSingleCareHomeMutation,
 } = featureApi;
