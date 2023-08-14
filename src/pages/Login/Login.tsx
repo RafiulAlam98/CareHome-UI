@@ -7,6 +7,7 @@ import Loading from "../../components/Loading/Loading";
 
 export default function Login() {
   const [userSignIn, { isLoading, isError }] = useUserSignInMutation();
+
   const {
     register,
     handleSubmit,
@@ -19,6 +20,7 @@ export default function Login() {
       // console.log(res.data.data.userRole);
       const role = res.data.data.userRole;
       const token = res.data.data.accessToken;
+
       localStorage.setItem("accessToken", token);
       localStorage.setItem("user", role);
       if (token) {

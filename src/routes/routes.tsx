@@ -16,6 +16,7 @@ import AddNewsEvent from "../pages/Dashboard/AddNewsEvent/AddNewsEvent";
 import AddAwards from "../pages/Dashboard/AddAwards/AddAwards";
 import FeatureLists from "../pages/Dashboard/FeatureLists/FeatureLists";
 import UserList from "../pages/Dashboard/UserList/UserList";
+import PrivateRoutes from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
   {
@@ -44,7 +45,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/reviews/:id",
-        element: <AddReview />,
+        element: (
+          <PrivateRoutes>
+            <AddReview />
+          </PrivateRoutes>
+        ),
       },
     ],
   },

@@ -1,28 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type IAccessToken = {
-  email: string | null;
-  accesstoken: string | null;
-};
-const initialState: IAccessToken = {
-  email: null,
-  accesstoken: null,
+const initialState = {
+  user: {
+    role: null,
+    accessToken: null,
+  },
+  isLoading: false,
 };
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    getUser: (state, action) => {
-      (state.accesstoken = localStorage.getItem("accesstoken")),
-        (state.email = action.payload);
+    setUser: (state, action) => {
+      state.user = action.payload;
     },
-    removeUser: (state, action) => {
-      state.accesstoken = action.payload;
-      state.email = null;
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
     },
   },
 });
-
-export const { getUser, removeUser } = userSlice.actions;
+export const { setUser, setLoading } = userSlice.actions;
 export default userSlice.reducer;

@@ -1,65 +1,27 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
 import CallHelpLine from "../../../components/CallHelpLine/CallHelpLine";
+import logo from "../../../assets/logo.webp";
 
 export default function Header() {
   // const user = localStorage.getItem("accessToken");
   const role = localStorage.getItem("user");
   console.log(role);
   const handleLogout = () => {
-    return localStorage.removeItem("user");
+    const user = localStorage.removeItem("user");
+    const token = localStorage.removeItem("accessToken");
+    return {
+      user,
+      token,
+    };
   };
   return (
     <>
       <div className="header-container max-w-[1200px] mx-auto">
         <div className="">
           <Link to="/">
-            <img
-              src="https://www.carehome.co.uk/assets/images/theme/logo.svg"
-              alt=""
-              className="w-1/2"
-            />
+            <img src={logo} alt="" className="w-10" />
           </Link>
-        </div>
-
-        <div className="mr-20">
-          {role === "admin" && (
-            <Link to="/dashboard" className="text-sm mr-4 text-[#2073BD]">
-              Dashboard
-            </Link>
-          )}
-
-          <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
-            About
-          </Link>
-        </div>
-
-        <div className="user-container">
-          <div>
-            <i className="fa-solid fa-heart text-xl text-[#FF3547] mr-2"></i>
-          </div>
-          <div>
-            <i className="fa-regular fa-eye text-xl text-[#2073BD] mr-2"></i>
-          </div>
-          <div className="dropdown">
-            <label tabIndex={0}>
-              <i className="fa-solid fa-circle-user text-xl text-[#2073BD] "></i>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Homepage</a>
-              </li>
-              <li>
-                <a>Portfolio</a>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
@@ -93,6 +55,21 @@ export default function Header() {
                     className="font-normal hover:bg-[#01284A] hover:text-white"
                   >
                     Care Homes
+                  </Link>
+                </li>
+                <li>
+                  {role === "admin" && (
+                    <Link
+                      to="/dashboard"
+                      className="text-sm mr-4 text-[#2073BD]"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
+                    About
                   </Link>
                 </li>
 
@@ -140,6 +117,18 @@ export default function Header() {
               <li>
                 <Link to="" className="text-white hover:text-white  text-xs">
                   Care Homes
+                </Link>
+              </li>
+              <li>
+                {role === "admin" && (
+                  <Link to="/dashboard" className="text-sm mr-4 text-[#2073BD]">
+                    Dashboard
+                  </Link>
+                )}
+              </li>
+              <li>
+                <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
+                  About
                 </Link>
               </li>
 
