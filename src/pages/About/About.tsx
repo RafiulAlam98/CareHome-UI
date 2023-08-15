@@ -12,14 +12,13 @@ export default function About() {
           Contact carehome.co.bd
         </h1>
         <h2 className="italic text-center  my-1 text-md">
-          carehome.co.uk is published & owned by <br />
+          carehome.co.bd is published & owned by <br />
           Tomorrow's Guides Ltd
         </h2>
         <h3 className="mt-4 text-center">
           Tomorrow's Guides Ltd Unit 1, Station Yard <br />
           Station Road <br />
-          Hungerford <br />
-          RG17 0DY
+          Chittagong <br />
         </h3>
         <h3 className="text-center font-semibold my-5">
           If you have an enquiry with a Care Home or Supplier please do not

@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
 import {
-  useDeleteSingleCareHomeMutation,
-  useGetFeatureQuery,
-} from "../../../redux/features/featureApi";
-import { useNavigate } from "react-router-dom";
+  useDeleteTourMutation,
+  useGetAllTourQuery,
+} from "../../../redux/tour/tourApi";
+import { toast } from "react-hot-toast";
 
-export default function FeatureLists() {
-  const { data, isLoading } = useGetFeatureQuery(undefined);
-  const [deleteSingleCareHome] = useDeleteSingleCareHomeMutation();
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export default function TourLists() {
+  const { data, isLoading } = useGetAllTourQuery(undefined);
+  const [deleteTour] = useDeleteTourMutation();
   const navigate = useNavigate();
 
   if (isLoading) {
@@ -17,7 +17,7 @@ export default function FeatureLists() {
   }
   const handleDelete = (id: string) => {
     console.log(id);
-    deleteSingleCareHome(id).then((res: any) => {
+    deleteTour(id).then((res: any) => {
       if (res.data.statusCode === 200) {
         toast(res.data.message);
         navigate("/");
@@ -25,12 +25,12 @@ export default function FeatureLists() {
     });
   };
 
-  const features = data.data;
+  const tours = data.data;
   return (
     <div className="min-h-screen">
       {" "}
       <h2 className="text-2xl text-teal-600 my-6 text-center">
-        <span className="border-b-2 border-teal-300 ">CARE HOME LIST </span>
+        <span className="border-b-2 border-teal-300 ">TOUR LIST </span>
       </h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
@@ -38,22 +38,21 @@ export default function FeatureLists() {
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Location</th>
-              <th>Authority</th>
-              <th>Incharge Officer</th>
+              <th>Email</th>
+              <th>Phone</th>
             </tr>
           </thead>
-          {features.map((feature: any, index: number) => (
-            <tbody key={feature._id}>
+          {tours.map((tour: any, index: number) => (
+            <tbody key={tour._id}>
               <tr>
                 <th>{index + 1}</th>
-                <td>{feature.title}</td>
-                <td>{feature.location}</td>
-                <td>{feature.localAuthority}</td>
-                <td>{feature.personIncharge}</td>
+                <td>{tour.name}</td>
+                <td>{tour.email}</td>
+                <td>{tour.phone}</td>
+
                 <td>
                   <button
-                    onClick={() => handleDelete(feature._id)}
+                    onClick={() => handleDelete(tour._id)}
                     className="bg-red-600 text-white p-2 rounded "
                   >
                     DELETE

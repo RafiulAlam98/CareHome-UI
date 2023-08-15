@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import {
@@ -8,10 +10,13 @@ import {
   useUserSignUpMutation,
 } from "../../redux/users/usersApi";
 import Loading from "../../components/Loading/Loading";
+import { auth } from "../../firebase.init";
 
 export default function SignUp() {
   const [userSignUp, { isLoading }] = useUserSignUpMutation();
   const [userSignIn] = useUserSignInMutation();
+  const [createUserWithEmailAndPassword] =
+    useCreateUserWithEmailAndPassword(auth);
   const {
     register,
     handleSubmit,
@@ -20,7 +25,8 @@ export default function SignUp() {
   const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    console.log(data.email, data.password);
+    createUserWithEmailAndPassword(data.email, data.password);
     userSignUp(data).then((res: any) => {
       if (res?.data.statusCode === 200) {
         userSignIn(data).then((res: any) => {

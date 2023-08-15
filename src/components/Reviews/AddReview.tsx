@@ -37,9 +37,7 @@ export default function AddReview() {
           {" "}
           <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">
-                What is your homeId?
-              </span>
+              <span className="label-text text-black">Care-home id</span>
             </label>
             <input
               defaultValue={id.id}
@@ -52,32 +50,34 @@ export default function AddReview() {
           </div>
           <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">
-                What is your overallExperience?
-              </span>
+              <span className="label-text text-black">Overall Experience</span>
             </label>
-            <input
+            <select
               {...register("overallExperience", {
                 required: "overallExperience is required",
               })}
-              type="overallExperience"
-              className="input input-bordered input-sm w-full "
-            />
+              className="select select-sm input-bordered input-sm w-full "
+            >
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
             {errors.overallExperience && (
               <span className="text-black">This field is required</span>
             )}
           </div>
           <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">
-                What is your dateSubmitted?
-              </span>
+              <span className="label-text text-black">Submission Date</span>
             </label>
             <input
               {...register("dateSubmitted", {
                 required: "dateSubmitted is required",
               })}
-              type="dateSubmitted"
+              type="date"
               className="input input-bordered input-sm w-full "
             />
             {errors.dateSubmitted && (
@@ -86,9 +86,7 @@ export default function AddReview() {
           </div>
           <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">
-                What is your reviewerName?
-              </span>
+              <span className="label-text text-black">Your Name</span>
             </label>
             <input
               {...register("reviewerName", {
@@ -103,15 +101,13 @@ export default function AddReview() {
           </div>
           <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">
-                What is your reviewPublisDate?
-              </span>
+              <span className="label-text text-black">Publish Date?</span>
             </label>
             <input
               {...register("reviewPublisDate", {
                 required: "reviewPublisDate is required",
               })}
-              type="reviewPublisDate"
+              type="date"
               className="input input-bordered input-sm w-full "
             />
             {errors.reviewPublisDate && (
@@ -120,9 +116,7 @@ export default function AddReview() {
           </div>
           <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">
-                What is your reviewDescription?
-              </span>
+              <span className="label-text text-black">Description</span>
             </label>
             <textarea
               {...register("reviewDescription", {

@@ -2,19 +2,17 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import CallHelpLine from "../../../components/CallHelpLine/CallHelpLine";
 import logo from "../../../assets/logo.webp";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase.init";
+import { toast } from "react-hot-toast";
 
 export default function Header() {
   // const user = localStorage.getItem("accessToken");
   const role = localStorage.getItem("user");
   console.log(role);
-  const handleLogout = () => {
-    const user = localStorage.removeItem("user");
-    const token = localStorage.removeItem("accessToken");
-    return {
-      user,
-      token,
-    };
-  };
+  const [user] = useAuthState(auth);
+  const [signOut] = useSignOut(auth);
+
   return (
     <>
       <div className="header-container max-w-[1200px] mx-auto">
@@ -73,7 +71,22 @@ export default function Header() {
                   </Link>
                 </li>
 
-                {role === null ? (
+                {user ? (
+                  <>
+                    <button
+                      className="font-normal  hover:bg-[#01284A] hover:text-white"
+                      onClick={async () => {
+                        const success = await signOut();
+                        if (success) {
+                          toast("You are sign out");
+                          localStorage.removeItem("accessToken");
+                        }
+                      }}
+                    >
+                      Sign Out
+                    </button>
+                  </>
+                ) : (
                   <>
                     <li>
                       <Link
@@ -92,13 +105,6 @@ export default function Header() {
                       </Link>
                     </li>
                   </>
-                ) : (
-                  <button
-                    className="font-normal  hover:bg-[#01284A] hover:text-white"
-                    onClick={() => handleLogout()}
-                  >
-                    Logout
-                  </button>
                 )}
 
                 {/* <li>
@@ -132,12 +138,28 @@ export default function Header() {
                 </Link>
               </li>
 
-              {role === null ? (
+              {user ? (
+                <>
+                  <button
+                    className="font-normal text-white  hover:bg-red-400 hover:text-white"
+                    onClick={async () => {
+                      const success = await signOut();
+                      if (success) {
+                        toast("You are sign out");
+                        localStorage.removeItem("accessToken");
+                        localStorage.removeItem("user");
+                      }
+                    }}
+                  >
+                    Sign Out
+                  </button>
+                </>
+              ) : (
                 <>
                   <li>
                     <Link
                       to="/login"
-                      className="text-white hover:text-white  text-xs"
+                      className="font-normal text-white hover:bg-red-400hover:text-white"
                     >
                       Login
                     </Link>
@@ -145,19 +167,12 @@ export default function Header() {
                   <li>
                     <Link
                       to="/sign-up"
-                      className="text-white hover:text-white  text-xs"
+                      className="font-normal text-white hover:bg-red-400hover:text-white"
                     >
                       Sign Up
                     </Link>
                   </li>
                 </>
-              ) : (
-                <button
-                  className="text-white hover:text-white  text-xs"
-                  onClick={() => handleLogout()}
-                >
-                  logout
-                </button>
               )}
 
               {/* <li>

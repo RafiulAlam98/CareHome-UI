@@ -13,7 +13,7 @@ export default function UserList() {
     <div className="min-h-screen">
       {" "}
       <h2 className="text-2xl text-teal-600 my-6 text-center">
-        <span className="border-b-2 border-teal-300 ">USER LISTS </span>
+        <span className="border-b-2 border-teal-300 ">USER LIST </span>
       </h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra">

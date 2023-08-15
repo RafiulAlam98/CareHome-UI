@@ -5,6 +5,14 @@ export const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://care-home-backend.vercel.app/api/v1/",
   }),
-  tagTypes: ["careHome", "users", "reviews", "newsEvent", "award", "images"],
+  tagTypes: [
+    "careHome",
+    "users",
+    "reviews",
+    "newsEvent",
+    "award",
+    "images",
+    "tour",
+  ],
   endpoints: () => ({}),
 });

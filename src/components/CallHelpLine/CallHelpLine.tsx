@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 import "./CallHelpLine.css";
+import logo from "../../assets/logo.png";
 
 export default function CallHelpLine() {
   return (
@@ -22,16 +23,12 @@ export default function CallHelpLine() {
           <div className="grid grid-cols-3 gap-6">
             <div>
               <div>
-                <img
-                  src="https://www.carehome.co.uk/assets/images/carehelp/helpline-experts-v2.jpg"
-                  alt=""
-                  className="rounded-full"
-                />
+                <img src={logo} alt="" className="rounded-full" />
               </div>
               <div className="shadow-xl px-3 mt-3 p-2 border border-green-300">
                 <h2 className="font-bold text-md">I am so grateful</h2>
                 <p className="font-semibold text-xs ">
-                  "... for the help of carehome.co.uk guiding me towards finding
+                  "... for the help of carehome.co.bd guiding me towards finding
                   a suitable care home for my Mum. Eileen provided a list of
                   potential care homes. The care homes have been contacted in
                   advance on my behalf. I can now use this to arrange visits as

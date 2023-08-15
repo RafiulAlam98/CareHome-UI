@@ -4,9 +4,13 @@ import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserSignInMutation } from "../../redux/users/usersApi";
 import Loading from "../../components/Loading/Loading";
+import { auth } from "../../firebase.init";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 export default function Login() {
   const [userSignIn, { isLoading, isError }] = useUserSignInMutation();
+
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
   const {
     register,
@@ -16,6 +20,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
+    signInWithEmailAndPassword(data.email, data.password);
     userSignIn(data).then((res: any) => {
       // console.log(res.data.data.userRole);
       const role = res.data.data.userRole;
@@ -82,7 +87,11 @@ export default function Login() {
           </Link>
         </p>
 
-        {isError && <p>Something Went wrong</p>}
+        {isError && (
+          <h1 className="text-red-600 mt-10 text-center text-2xl">
+            Something Went wrong, Please try again with valid email and password
+          </h1>
+        )}
         {/* <div className="divider text-black font-bold">OR</div>
         <button className="btn btn-outline bg-white w-full">
           Continue With Google

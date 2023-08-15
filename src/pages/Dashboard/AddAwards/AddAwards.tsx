@@ -41,7 +41,6 @@ export default function AddAwards() {
               <span className="label-text text-black">homeId?</span>
             </label>
             <input
-              disabled
               defaultValue={id.id}
               {...register("homeId", {
                 required: "homeId  is required",

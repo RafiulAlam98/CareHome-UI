@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 import Loading from "../../../components/Loading/Loading";
 
 export default function AddNewsEvent() {
-  const [addNewsEvent, { isLoading, isError }] = useAddNewsEventMutation();
+  const [addNewsEvent, { isLoading }] = useAddNewsEventMutation();
   const id = useParams();
   const {
     register,
@@ -36,64 +36,59 @@ export default function AddNewsEvent() {
       </h2>
       <form className="text-center" onSubmit={handleSubmit(onSubmit)}>
         <div className="">
-          <div className="form-control lg:w-1/2 mx-auto">
+          {" "}
+          <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">homeId?</span>
+              <span className="label-text text-red-600">Care-home id</span>
             </label>
             <input
               defaultValue={id.id}
-              disabled
               {...register("homeId", {
-                required: "homeId  is required",
+                required: "homeId Address is required",
               })}
               type="text"
               className="input input-bordered input-sm w-full "
             />
           </div>
-          <div className="form-control lg:w-1/2 mx-auto">
+          <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">totalEvent?</span>
+              <span className="label-text text-red-600">Total Event</span>
             </label>
             <input
               {...register("totalEvent", {
                 required: "totalEvent is required",
               })}
               type="number"
-              className="input input-bordered input-sm w-full "
+              className="input input-sm input-bordered  w-full "
             />
-            {errors.totalNews && (
-              <span className="text-black">This field is required</span>
+            {errors.totalEvent && (
+              <span className="text-red-600">This field is required</span>
             )}
           </div>
-          <div className="form-control lg:w-1/2 mx-auto">
+          <div className="form-control lg:w-1/2 mx-auto ">
             <label className="label">
-              <span className="label-text text-black">totalNews?</span>
+              <span className="label-text text-red-600">Total News</span>
             </label>
             <input
               {...register("totalNews", {
-                required: "totalNews is required",
+                required: "total News is required",
               })}
               type="number"
-              className="input input-bordered input-sm w-full "
+              className="input input-sm input-bordered  w-full "
             />
             {errors.totalNews && (
-              <span className="text-black">This field is required</span>
+              <span className="text-red-600">This field is required</span>
             )}
           </div>
-
-          {isLoading ? (
-            <Loading />
-          ) : (
-            <div className=" lg:w-1/2 mx-auto">
-              {" "}
-              <input
-                type="submit"
-                className="btn btn-sm mt-4 w-1/2 btn-accent text-white my-3"
-              />
-            </div>
-          )}
-          {isError && <p className="text-red-600">Something went wrong</p>}
         </div>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <input
+            type="submit"
+            className="btn btn-sm mt-4 w-1/3 btn-accent text-white my-3"
+          />
+        )}
       </form>
     </div>
   );

@@ -5,7 +5,6 @@ import NotFound from "../pages/NotFound/NotFound";
 import Main from "../Layout/Main";
 import FeatureDetails from "../pages/FeatureDetails/FeatureDetails";
 import Websites from "../pages/Websites/Websites";
-
 import About from "../pages/About/About";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
@@ -16,7 +15,9 @@ import AddNewsEvent from "../pages/Dashboard/AddNewsEvent/AddNewsEvent";
 import AddAwards from "../pages/Dashboard/AddAwards/AddAwards";
 import FeatureLists from "../pages/Dashboard/FeatureLists/FeatureLists";
 import UserList from "../pages/Dashboard/UserList/UserList";
-import PrivateRoutes from "./PrivateRoutes";
+import PrivateRoute from "./PrivateRoutes";
+import TourInformation from "../components/BookATour/TourInformation";
+import TourLists from "../pages/Dashboard/TourLists/TourLists";
 
 const routes = createBrowserRouter([
   {
@@ -46,9 +47,17 @@ const routes = createBrowserRouter([
       {
         path: "/reviews/:id",
         element: (
-          <PrivateRoutes>
+          <PrivateRoute>
             <AddReview />
-          </PrivateRoutes>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/tour",
+        element: (
+          <PrivateRoute>
+            <TourInformation />
+          </PrivateRoute>
         ),
       },
     ],
@@ -69,28 +78,60 @@ const routes = createBrowserRouter([
 
   {
     path: "/dashboard",
-    element: <DashboardMain />,
+    element: (
+      <PrivateRoute>
+        <DashboardMain />
+      </PrivateRoute>
+    ),
 
     children: [
       {
         path: "/dashboard",
-        element: <AddFeature />,
+        element: (
+          <PrivateRoute>
+            <AddFeature />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/feature-list",
-        element: <FeatureLists />,
+        element: (
+          <PrivateRoute>
+            <FeatureLists />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/user-list",
-        element: <UserList />,
+        element: (
+          <PrivateRoute>
+            <UserList />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/news-event/:id",
-        element: <AddNewsEvent />,
+        element: (
+          <PrivateRoute>
+            <AddNewsEvent />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard/award/:id",
-        element: <AddAwards />,
+        element: (
+          <PrivateRoute>
+            <AddAwards />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/tour-list",
+        element: (
+          <PrivateRoute>
+            <TourLists />
+          </PrivateRoute>
+        ),
       },
     ],
   },

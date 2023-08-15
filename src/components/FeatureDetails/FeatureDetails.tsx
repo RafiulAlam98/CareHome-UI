@@ -8,6 +8,7 @@ import FeatureFunding from "../FeatureFunding/FeatureFunding";
 import Performance from "../Performance/Performance";
 import Reviews from "../Reviews/Reviews";
 import Award from "../Award/Award";
+import NewsEvent from "../NewsEvent/NewsEvent";
 
 const icons = [
   {
@@ -44,6 +45,7 @@ export default function HeroDetails() {
     _id,
     title,
     location,
+    website,
     logo,
     quote,
     owner,
@@ -91,7 +93,7 @@ export default function HeroDetails() {
         ))}
       </div>
 
-      <HeroDetailsLink id={_id} />
+      <HeroDetailsLink id={_id} website={website} />
       <FeatureImages images={images} id={_id} />
 
       <div className="mt-8">{quote}</div>
@@ -112,6 +114,7 @@ export default function HeroDetails() {
       <Reviews id={_id} />
       <Performance performance={performance} />
       <Award id={_id} />
+      <NewsEvent id={_id} />
     </div>
   );
 }

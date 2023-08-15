@@ -42,12 +42,20 @@ export default function FeaturedSection() {
         setSearchText={setSearchText}
       />
       <div className="max-w-[1200px] py-10 mx-auto">
-        <h3 className="text-md mb-5">Featured Care Home Groups</h3>
+        <h3 className="text-2xl mb-10 text-teal-600 my-4 ">
+          <span className="border-b-2 border-teal-400 ">
+            Featured Care Home Groups
+          </span>
+        </h3>
         <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 ">
           {features?.map((feature: any) => (
             <Link key={feature._id} to={`/details/${feature._id}`}>
               <div className="card hover:border hover:border-red-400  shadow-xl">
-                <img src={feature.img[0]} className="rounded-md" alt="Shoes" />
+                <img
+                  src={feature.img[0]}
+                  className="rounded-md w-full h-1/2"
+                  alt="Shoes"
+                />
                 <div className="flex justify-around my-6 items-center">
                   <h2 className="text-[#23527C] text-md">{feature.title}</h2>
                   <img src={feature.logo} alt="" className="w-1/3" />
