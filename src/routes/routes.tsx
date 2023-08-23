@@ -18,6 +18,7 @@ import UserList from "../pages/Dashboard/UserList/UserList";
 import PrivateRoute from "./PrivateRoutes";
 import TourInformation from "../components/BookATour/TourInformation";
 import TourLists from "../pages/Dashboard/TourLists/TourLists";
+import HelpLine from "../pages/HelpLine/HelpLine";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/help_line",
+        element: <HelpLine />,
       },
       {
         path: "/reviews/:id",

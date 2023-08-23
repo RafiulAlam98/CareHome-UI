@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
 import CallHelpLine from "../../../components/CallHelpLine/CallHelpLine";
-import logo from "../../../assets/logo.webp";
+import logo from "../../../../logo/logo of careHome.png";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase.init";
 import { toast } from "react-hot-toast";
@@ -18,12 +18,12 @@ export default function Header() {
       <div className="header-container max-w-[1200px] mx-auto">
         <div className="">
           <Link to="/">
-            <img src={logo} alt="" className="w-10" />
+            <img src={logo} alt="" className="w-48" />
           </Link>
         </div>
       </div>
 
-      <div className="bg-[rgb(29,53,101)]">
+      <div className="bg-[#2073BD]">
         <div className="navbar max-w-[1200px]  mx-auto">
           <div className="">
             <div className="dropdown">
@@ -66,8 +66,19 @@ export default function Header() {
                   )}
                 </li>
                 <li>
-                  <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
+                  <Link
+                    to="/about"
+                    className="font-normal hover:bg-[#01284A] hover:text-white"
+                  >
                     About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/help_line"
+                    className="font-normal hover:bg-[#01284A] hover:text-white"
+                  >
+                    Care HelpLine
                   </Link>
                 </li>
 
@@ -121,27 +132,44 @@ export default function Header() {
           <div className="mx-auto hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <Link to="" className="text-white hover:text-white  text-xs">
+                <Link
+                  to=""
+                  className="text-white visited:white hover:text-white  text-md hover:border-b hover:border-b-white"
+                >
                   Care Homes
                 </Link>
               </li>
               <li>
                 {role === "admin" && (
-                  <Link to="/dashboard" className="text-sm mr-4 text-[#2073BD]">
+                  <Link
+                    to="/dashboard"
+                    className="text-white hover:text-white  text-md hover:border-b hover:border-b-white"
+                  >
                     Dashboard
                   </Link>
                 )}
               </li>
               <li>
-                <Link to="/about" className="text-sm mr-4 text-[#2073BD]">
+                <Link
+                  to="/about"
+                  className="text-white hover:text-white  text-md hover:border-b hover:border-b-white"
+                >
                   About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/help_line"
+                  className="text-white hover:text-white  text-md hover:border-b hover:border-b-white"
+                >
+                  Care HelpLine
                 </Link>
               </li>
 
               {user ? (
                 <>
                   <button
-                    className="font-normal text-white  hover:bg-red-400 hover:text-white"
+                    className="font-normal text-white  hover:bg-red-600 px-2 rounded hover:text-white"
                     onClick={async () => {
                       const success = await signOut();
                       if (success) {
@@ -159,7 +187,7 @@ export default function Header() {
                   <li>
                     <Link
                       to="/login"
-                      className="font-normal text-white hover:bg-red-400hover:text-white"
+                      className="font-normal text-white hover:bg-red-600 hover:text-white"
                     >
                       Login
                     </Link>
@@ -167,7 +195,7 @@ export default function Header() {
                   <li>
                     <Link
                       to="/sign-up"
-                      className="font-normal text-white hover:bg-red-400hover:text-white"
+                      className="font-normal text-white hover:bg-red-600 hover:text-white"
                     >
                       Sign Up
                     </Link>

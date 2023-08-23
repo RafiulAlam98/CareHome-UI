@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../../logo/logo of careHome.png";
 
 export default function About() {
   return (
     <section className="mx-auto my-5">
       <Link to="/">
-        <img src={logo} alt="" className="w-28 mx-auto my-2" />
+        <img src={logo} alt="" className="w-1/3 mx-auto my-2" />
       </Link>
       <div>
         <h1 className="text-center text-[#2073BD] text-xl">
@@ -29,8 +29,7 @@ export default function About() {
         </h3>
         <h3 className="text-center my-5">
           Our standard office hours are Monday to Friday 9am to 5pm (excluding
-          Bank Holidays and the <br /> Xmas period). For urgent media enquiries
-          outside these hours please click here.
+          Bank Holidays and the <br /> Xmas period).
         </h3>
         <span>
           <hr className="my-7" />

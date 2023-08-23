@@ -24,10 +24,10 @@ export default function Hero() {
             <h4 className="text-white text-sm mb-2 text-start font-semibold">
               for help finding the right care home
             </h4>
-            <div className="flex justify-between text-sm mb-2 text-white text-start font-semibold">
+            {/* <div className="flex justify-between text-sm mb-2 text-white text-start font-semibold">
               <h2 className=" ">I am so grateful</h2>
               <h3 className="">L Gardiner December 2022</h3>
-            </div>
+            </div> */}
             <p className="text-sm mt-2 text-white text-start font-semibold">
               "... for the help of carehome.co.uk guiding me towards finding a
               suitable care home for my Mum."
