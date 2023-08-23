@@ -9,6 +9,8 @@ import Performance from "../Performance/Performance";
 import Reviews from "../Reviews/Reviews";
 import Award from "../Award/Award";
 import NewsEvent from "../NewsEvent/NewsEvent";
+import OfferedCare from "../OfferedCare/OfferedCare";
+import Facilities from "../Facilities/Facilities";
 
 const icons = [
   {
@@ -54,7 +56,9 @@ export default function HeroDetails() {
     localAuthority,
     admissionRestrictionAge,
     room,
+    price,
   } = details.data;
+  console.log(price);
 
   return (
     <div className="bg-[#FEFEFE] my-6">
@@ -96,9 +100,9 @@ export default function HeroDetails() {
       <HeroDetailsLink id={_id} website={website} />
       <FeatureImages images={images} id={_id} />
 
-      <div className="mt-8">{quote}</div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 my-8">
-        <div>
+      <div className="mt-8 mx-4 text-sm font-serif ">{quote}</div>
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-6 my-8 mx-4">
+        <div className="mx-auto">
           <ProfessionalInfo
             owner={owner}
             personIncharge={personIncharge}
@@ -107,10 +111,18 @@ export default function HeroDetails() {
             room={room}
           />
         </div>
+        <div className="mx-auto">
+          <FeatureFunding price={price} title={title} />
+        </div>
+        <div className="mx-auto">
+          <OfferedCare />
+        </div>
         <div>
-          <FeatureFunding />
+          <Facilities />
         </div>
       </div>
+
+      
       <Reviews id={_id} />
       <Performance performance={performance} />
       <Award id={_id} />
