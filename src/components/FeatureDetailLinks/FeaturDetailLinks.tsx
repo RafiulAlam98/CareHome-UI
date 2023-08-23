@@ -8,7 +8,9 @@ export default function HeroDetailsLink({ id, website }: any) {
     <div className="flex justify-around items-center my-2 bg-gray-100 py-6 rounded">
       <BookATour />
       <button className="bg-[#2073BD] text-sm text-white text-semibold font-normal px-2 py-1">
-        <Link to={website}>Visit Website</Link>
+        <Link to={website} target="_blank">
+          Visit Website
+        </Link>
       </button>
 
       <button
@@ -19,7 +21,6 @@ export default function HeroDetailsLink({ id, website }: any) {
       </button>
       {role === "admin" && (
         <>
-          {" "}
           <button className="bg-[#2073BD] text-sm text-white text-semibold font-normal px-2 py-1">
             <Link to={`/dashboard/news-event/${id}`}>Add NewsEvent</Link>
           </button>

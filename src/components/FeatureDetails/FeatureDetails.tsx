@@ -34,6 +34,7 @@ const icons = [
     icon: <i className="fa-solid fa-share"></i>,
   },
 ];
+
 export default function HeroDetails() {
   const id = useParams();
 

@@ -9,7 +9,7 @@ export default function ProfessionalInfo({
   room,
 }: any) {
   return (
-    <div>
+    <div className="mx-auto">
       <h2 className="text-lg border-b-gray-200 border-b-2 font-semibold my-1">
         Good To Know
       </h2>
