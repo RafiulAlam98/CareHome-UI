@@ -13,7 +13,15 @@ const awardApi = api.injectEndpoints({
       }),
       invalidatesTags: ["award"],
     }),
+    deleteAward: builder.mutation({
+      query: (id) => ({
+        url: `allAward/${id}`,
+        method: "POST",
+      }),
+      invalidatesTags: ["award"],
+    }),
   }),
 });
 
-export const { useGetAwardQuery, useAddAwardMutation } = awardApi;
+export const { useGetAwardQuery, useAddAwardMutation, useDeleteAwardMutation } =
+  awardApi;

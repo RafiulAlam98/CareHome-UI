@@ -11,9 +11,20 @@ const newsEventApi = api.injectEndpoints({
         method: "POST",
         body: data,
       }),
-      invalidatesTags: ["reviews"],
+      invalidatesTags: ["newsEvent"],
+    }),
+    deleteNewsEvent: builder.mutation({
+      query: (id) => ({
+        url: `newsEvent/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["newsEvent"],
     }),
   }),
 });
 
-export const { useGetNewsEventQuery, useAddNewsEventMutation } = newsEventApi;
+export const {
+  useGetNewsEventQuery,
+  useAddNewsEventMutation,
+  useDeleteNewsEventMutation,
+} = newsEventApi;
