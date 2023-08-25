@@ -47,18 +47,20 @@ export default function FeaturedSection() {
             Featured Care Home Groups
           </span>
         </h3>
-        <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 ">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 ">
           {features?.map((feature: any) => (
             <Link key={feature._id} to={`/details/${feature._id}`}>
-              <div className="card hover:border hover:border-red-400  shadow-xl">
+              <div className="card hover:border hover:border-teal-600  shadow-xl rounded min-h-full">
                 <img
                   src={feature.img[0]}
-                  className="rounded-md w-full h-1/2"
-                  alt="Shoes"
+                  className="rounded-md w-full max-h-44"
+                  alt=""
                 />
                 <div className="flex justify-around my-6 items-center">
-                  <h2 className="text-[#23527C] text-md">{feature.title}</h2>
-                  <img src={feature.logo} alt="" className="w-1/3" />
+                  <h2 className="text-[#23527C] text-md font-serif text-lg">
+                    {feature.title}
+                  </h2>
+                  <img src={feature.logo} alt="" className="h-12 w-24" />
                 </div>
               </div>
             </Link>

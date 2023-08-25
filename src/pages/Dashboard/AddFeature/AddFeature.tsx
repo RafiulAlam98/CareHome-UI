@@ -17,8 +17,6 @@ export default function AddFeature() {
   const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
-    console.log(data);
-
     addFeature(data).then((res: any) => {
       console.log(res);
       if (res.data.statusCode === 200) {
@@ -170,8 +168,8 @@ export default function AddFeature() {
               {...register("logo", {
                 required: "logo is required",
               })}
-              type="logo"
-              className="input input-bordered input-sm w-full "
+              type="text"
+              className="input input-bordered  input-sm w-full "
             />
             {errors.logo && (
               <span className="text-black">This field is required</span>
@@ -186,8 +184,8 @@ export default function AddFeature() {
               {...register("img", {
                 required: "img is required",
               })}
-              type="img"
-              className="input input-bordered input-sm w-full "
+              type="text"
+              className="input input-bordered  input-sm w-full "
             />
             {errors.img && (
               <span className="text-black">This field is required</span>

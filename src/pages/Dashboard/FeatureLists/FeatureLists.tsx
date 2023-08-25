@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ /* eslint-disable @typescript-eslint/no-explicit-any */
 import { toast } from "react-hot-toast";
 import Loading from "../../../components/Loading/Loading";
 import {
