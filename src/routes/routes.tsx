@@ -1,40 +1,40 @@
-import { createBrowserRouter } from "react-router-dom";
-
-import Home from "../pages/Home/Home/Home";
-import NotFound from "../pages/NotFound/NotFound";
-import Main from "../Layout/Main";
-import FeatureDetails from "../pages/FeatureDetails/FeatureDetails";
-import Websites from "../pages/Websites/Websites";
-import About from "../pages/About/About";
-import SignUp from "../pages/SignUp/SignUp";
-import Login from "../pages/Login/Login";
-import DashboardMain from "../Layout/DashboardMain";
-import AddReview from "../components/Reviews/AddReview";
-import AddFeature from "../pages/Dashboard/AddFeature/AddFeature";
-import AddNewsEvent from "../pages/Dashboard/AddNewsEvent/AddNewsEvent";
-import AddAwards from "../pages/Dashboard/AddAwards/AddAwards";
-import FeatureLists from "../pages/Dashboard/FeatureLists/FeatureLists";
-import UserList from "../pages/Dashboard/UserList/UserList";
-import PrivateRoute from "./PrivateRoutes";
-import TourInformation from "../components/BookATour/TourInformation";
-import TourLists from "../pages/Dashboard/TourLists/TourLists";
-import HelpLine from "../pages/HelpLine/HelpLine";
+import About from '../pages/About/About';
+import AddAwards from '../pages/Dashboard/AddAwards/AddAwards';
+import AddCareTypes from '../pages/Dashboard/AddCareTypes/AddCareTypes';
+import AddFeature from '../pages/Dashboard/AddFeature/AddFeature';
+import AddNewsEvent from '../pages/Dashboard/AddNewsEvent/AddNewsEvent';
+import AddReview from '../components/Reviews/AddReview';
+import DashboardMain from '../Layout/DashboardMain';
+import FeatureDetails from '../pages/FeatureDetails/FeatureDetails';
+import FeatureLists from '../pages/Dashboard/FeatureLists/FeatureLists';
+import HelpLine from '../pages/HelpLine/HelpLine';
+import Home from '../pages/Home/Home/Home';
+import Login from '../pages/Login/Login';
+import Main from '../Layout/Main';
+import NotFound from '../pages/NotFound/NotFound';
+import PrivateRoute from './PrivateRoutes';
+import SignUp from '../pages/SignUp/SignUp';
+import TourInformation from '../components/BookATour/TourInformation';
+import TourLists from '../pages/Dashboard/TourLists/TourLists';
+import UserList from '../pages/Dashboard/UserList/UserList';
+import Websites from '../pages/Websites/Websites';
+import { createBrowserRouter } from 'react-router-dom';
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Main />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
       {
-        path: "/details/:id",
+        path: '/details/:id',
         element: <FeatureDetails />,
       },
       {
-        path: "/website",
+        path: '/website',
         element: <Websites />,
       },
       // {
@@ -42,15 +42,15 @@ const routes = createBrowserRouter([
       //   element: <Jobs />,
       // },
       {
-        path: "/about",
+        path: '/about',
         element: <About />,
       },
       {
-        path: "/help_line",
+        path: '/help_line',
         element: <HelpLine />,
       },
       {
-        path: "/reviews/:id",
+        path: '/reviews/:id',
         element: (
           <PrivateRoute>
             <AddReview />
@@ -58,7 +58,7 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/tour",
+        path: '/tour',
         element: (
           <PrivateRoute>
             <TourInformation />
@@ -69,20 +69,20 @@ const routes = createBrowserRouter([
   },
 
   {
-    path: "/sign-up",
+    path: '/sign-up',
     element: <SignUp />,
   },
   {
-    path: "/login",
+    path: '/login',
     element: <Login />,
   },
   {
-    path: "*",
+    path: '*',
     element: <NotFound />,
   },
 
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: (
       <PrivateRoute>
         <DashboardMain />
@@ -91,7 +91,7 @@ const routes = createBrowserRouter([
 
     children: [
       {
-        path: "/dashboard",
+        path: '/dashboard',
         element: (
           <PrivateRoute>
             <AddFeature />
@@ -99,7 +99,7 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/feature-list",
+        path: '/dashboard/feature-list',
         element: (
           <PrivateRoute>
             <FeatureLists />
@@ -107,7 +107,7 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/user-list",
+        path: '/dashboard/user-list',
         element: (
           <PrivateRoute>
             <UserList />
@@ -115,7 +115,7 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/news-event/:id",
+        path: '/dashboard/news-event/:id',
         element: (
           <PrivateRoute>
             <AddNewsEvent />
@@ -123,7 +123,15 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/award/:id",
+        path: '/dashboard/care-types/:id',
+        element: (
+          <PrivateRoute>
+            <AddCareTypes />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/dashboard/award/:id',
         element: (
           <PrivateRoute>
             <AddAwards />
@@ -131,7 +139,7 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "/dashboard/tour-list",
+        path: '/dashboard/tour-list',
         element: (
           <PrivateRoute>
             <TourLists />

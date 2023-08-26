@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import BookATour from "../BookATour/BookATour";
+import BookATour from '../BookATour/BookATour';
+import { Link } from 'react-router-dom';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default function HeroDetailsLink({ id, website }: any) {
-  const role = localStorage.getItem("user");
+  const role = localStorage.getItem('user');
   return (
     <div className="flex justify-around items-center my-2 bg-gray-100 py-6 rounded">
       <BookATour />
@@ -19,13 +19,16 @@ export default function HeroDetailsLink({ id, website }: any) {
       >
         Call
       </button>
-      {role === "admin" && (
+      {role === 'admin' && (
         <>
           <button className="bg-[#2073BD] text-sm text-white text-semibold font-normal px-2 py-1">
             <Link to={`/dashboard/news-event/${id}`}>Add NewsEvent</Link>
           </button>
           <button className="bg-[#008636] text-sm text-white text-semibold font-normal px-2 py-1">
             <Link to={`/dashboard/award/${id}`}>Add an Award</Link>
+          </button>
+          <button className="bg-[#008636] text-sm text-white text-semibold font-normal px-2 py-1">
+            <Link to={`/dashboard/care-types/${id}`}>Add Care Types</Link>
           </button>
         </>
       )}

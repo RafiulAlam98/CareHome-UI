@@ -11,13 +11,6 @@ export default function SearchAndFilter({
   };
   return (
     <div className="p-2 text-center">
-      <input
-        type="text"
-        className="input input-sm rounded  input-primary w-1/3 "
-        placeholder="Search by title or name or location"
-        value={searchText}
-        onChange={e => setSearchText(e.target.value)}
-      />
       <select
         name="isAvailable"
         className="select select-sm rounded select-info w-1/3 mr-2 "
@@ -30,6 +23,13 @@ export default function SearchAndFilter({
           </option>
         ))}
       </select>
+      <input
+        type="text"
+        className="input input-sm rounded  input-primary w-1/3 mr-2 mt-5"
+        placeholder="Search by title or name or location"
+        value={searchText}
+        onChange={e => setSearchText(e.target.value)}
+      />
     </div>
   );
 }

@@ -38,13 +38,13 @@ export default function FeaturedSection() {
         filterableData={filterableData}
       />
 
-      <div className="max-w-[1200px] py-10 mx-auto">
+      <div className="max-w-[1100px] py-10 mx-auto">
         <h3 className="text-2xl mb-10 text-teal-600 my-4 ">
           <span className="border-b-2 border-teal-400 ">
             Featured Care Home Groups
           </span>
         </h3>
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 ">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-4 ">
           {newFilteredList
             ?.filter((item: any) => {
               return searchText.toLowerCase() === ''
@@ -59,11 +59,11 @@ export default function FeaturedSection() {
                     className="rounded-md w-full max-h-44"
                     alt=""
                   />
-                  <div className="flex justify-around my-6 items-center">
-                    <h2 className="text-[#23527C] text-md font-serif text-lg">
+                  <div className="flex justify-around my-6 items-center px-2 my-3">
+                    <h2 className="text-[#23527C] text-md font-serif text-md mr-2">
                       {feature.title}
                     </h2>
-                    <img src={feature.logo} alt="" className="h-12 w-24" />
+                    <img src={feature.logo} alt="" className="h-12 w-20" />
                   </div>
                 </div>
               </Link>

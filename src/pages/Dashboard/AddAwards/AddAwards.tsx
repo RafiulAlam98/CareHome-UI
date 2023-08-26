@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
-import { useAddAwardMutation } from "../../../redux/award/awardApi";
-import Loading from "../../../components/Loading/Loading";
-import { toast } from "react-hot-toast";
+
+import { useNavigate, useParams } from 'react-router-dom';
+
+import Loading from '../../../components/Loading/Loading';
+import { toast } from 'react-hot-toast';
+import { useAddAwardMutation } from '../../../redux/award/awardApi';
+import { useForm } from 'react-hook-form';
 
 export default function AddAwards() {
   const [addAward, { isLoading, isError }] = useAddAwardMutation();
@@ -30,32 +32,32 @@ export default function AddAwards() {
   };
   return (
     <div className="min-h-screen">
-      {" "}
+      {' '}
       <h2 className="text-3xl text-teal-600 my-6 text-center">
         <span className="border-b-2 border-teal-300">Add An Award </span>
       </h2>
       <form className="" onSubmit={handleSubmit(onSubmit)}>
         <div className="">
-          <div className="form-control mx-auto w-1/2 ">
+          <div className="form-control mx-auto  ">
             <label className="label">
               <span className="label-text text-black">homeId?</span>
             </label>
             <input
               defaultValue={id.id}
-              {...register("homeId", {
-                required: "homeId  is required",
+              {...register('homeId', {
+                required: 'homeId  is required',
               })}
               type="text"
               className="input input-bordered input-sm w-full "
             />
           </div>
-          <div className="form-control mx-auto w-1/2  ">
+          <div className="form-control mx-auto   ">
             <label className="label">
               <span className="label-text text-black">awardLogo?</span>
             </label>
             <input
-              {...register("awardLogo", {
-                required: "awardLogo is required",
+              {...register('awardLogo', {
+                required: 'awardLogo is required',
               })}
               type="awardLogo"
               className="input input-bordered input-sm w-full "
@@ -64,13 +66,13 @@ export default function AddAwards() {
               <span className="text-black">This field is required</span>
             )}
           </div>
-          <div className="form-control mx-auto w-1/2  ">
+          <div className="form-control mx-auto   ">
             <label className="label">
               <span className="label-text text-black">awardTitle?</span>
             </label>
             <input
-              {...register("awardTitle", {
-                required: "awardTitle is required",
+              {...register('awardTitle', {
+                required: 'awardTitle is required',
               })}
               type="awardTitle"
               className="input input-bordered input-sm w-full "
@@ -79,13 +81,13 @@ export default function AddAwards() {
               <span className="text-black">This field is required</span>
             )}
           </div>
-          <div className="form-control mx-auto w-1/2  ">
+          <div className="form-control mx-auto   ">
             <label className="label">
               <span className="label-text text-black">date?</span>
             </label>
             <input
-              {...register("date", {
-                required: "date is required",
+              {...register('date', {
+                required: 'date is required',
               })}
               type="date"
               className="input input-bordered input-sm w-full "
@@ -94,13 +96,13 @@ export default function AddAwards() {
               <span className="text-black">This field is required</span>
             )}
           </div>
-          <div className="form-control mx-auto w-1/2  ">
+          <div className="form-control mx-auto   ">
             <label className="label">
               <span className="label-text text-black">awardDescription?</span>
             </label>
             <textarea
-              {...register("awardDescription", {
-                required: "awardDescription is required",
+              {...register('awardDescription', {
+                required: 'awardDescription is required',
               })}
               className="input input-bordered  w-full "
             />
@@ -113,7 +115,7 @@ export default function AddAwards() {
             <Loading />
           ) : (
             <div className="mx-auto w-1/3">
-              {" "}
+              {' '}
               <input
                 type="submit"
                 className="btn btn-sm mt-4 w-full btn-accent text-white my-3"

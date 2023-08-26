@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useNavigate, useParams } from "react-router-dom";
+
+import Loading from "../../../components/Loading/Loading";
+import { toast } from "react-hot-toast";
 import { useAddNewsEventMutation } from "../../../redux/newEvent/newEventApi";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
-import Loading from "../../../components/Loading/Loading";
 
 export default function AddNewsEvent() {
   const [addNewsEvent, { isLoading }] = useAddNewsEventMutation();
@@ -30,33 +32,33 @@ export default function AddNewsEvent() {
   };
   return (
     <div className="min-h-screen mx-auto">
-      {" "}
+      {' '}
       <h2 className="text-3xl text-teal-600 my-6 text-center">
         <span className="border-b-2 border-teal-300 ">Add NewsEvent</span>
       </h2>
       <form className="text-center" onSubmit={handleSubmit(onSubmit)}>
         <div className="">
-          {" "}
-          <div className="form-control lg:w-1/2 mx-auto ">
+          {' '}
+          <div className="form-control  mx-auto ">
             <label className="label">
               <span className="label-text text-red-600">Care-home id</span>
             </label>
             <input
               defaultValue={id.id}
-              {...register("homeId", {
-                required: "homeId Address is required",
+              {...register('homeId', {
+                required: 'homeId Address is required',
               })}
               type="text"
               className="input input-bordered input-sm w-full "
             />
           </div>
-          <div className="form-control lg:w-1/2 mx-auto ">
+          <div className="form-control  mx-auto ">
             <label className="label">
               <span className="label-text text-red-600">Total Event</span>
             </label>
             <input
-              {...register("totalEvent", {
-                required: "totalEvent is required",
+              {...register('totalEvent', {
+                required: 'totalEvent is required',
               })}
               type="number"
               className="input input-sm input-bordered  w-full "
@@ -65,13 +67,13 @@ export default function AddNewsEvent() {
               <span className="text-red-600">This field is required</span>
             )}
           </div>
-          <div className="form-control lg:w-1/2 mx-auto ">
+          <div className="form-control  mx-auto ">
             <label className="label">
               <span className="label-text text-red-600">Total News</span>
             </label>
             <input
-              {...register("totalNews", {
-                required: "total News is required",
+              {...register('totalNews', {
+                required: 'total News is required',
               })}
               type="number"
               className="input input-sm input-bordered  w-full "
