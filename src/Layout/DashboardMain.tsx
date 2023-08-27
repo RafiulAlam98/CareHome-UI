@@ -22,7 +22,7 @@ export default function DashboardMain() {
           </h1>
 
           <Link to="/dashboard">
-            <button className=" border   text-xl font-semibold text-white  rounded my-1 hover:bg-[#214497] py-3 hover:text-white mt-7">
+            <button className=" ml-3   text-xl font-semibold text-white  rounded my-1  py-3 hover:text-blue-700 mt-7">
               Add New Care Home
             </button>
           </Link>
@@ -33,17 +33,17 @@ export default function DashboardMain() {
             <Link to="/dashboard/news-event">Add News Event</Link>
           </h3> */}
           <Link to="/dashboard/feature-list">
-            <button className=" border   text-xl font-semibold  text-white  rounded my-1 hover:bg-[#214497] py-3 hover:text-white">
+            <button className=" ml-3   text-xl font-semibold  text-white  rounded my-1 hover:text-blue-700 py-3 ">
               Care Home List
             </button>
           </Link>
           <Link to="/dashboard/user-list">
-            <button className=" border   text-xl font-semibold  text-white  rounded my-1 hover:bg-[#214497] py-3 hover:text-white">
+            <button className=" ml-3   text-xl font-semibold  text-white  rounded my-1 hover:text-blue-700 py-3 ">
               Users List
             </button>
           </Link>
           <Link to="/dashboard/tour-list">
-            <button className=" border   text-xl font-semibold text-white  rounded my-1 hover:bg-[#214497] py-3 hover:text-white">
+            <button className=" ml-3   text-xl font-semibold text-white  rounded my-1 hover:text-blue-700 py-3 ">
               Tours List
             </button>
           </Link>
