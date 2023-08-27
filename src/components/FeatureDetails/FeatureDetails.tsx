@@ -60,6 +60,7 @@ export default function HeroDetails() {
     admissionRestrictionAge,
     room,
     price,
+    caretypes,
   } = details.data;
   console.log(price);
 
@@ -118,8 +119,9 @@ export default function HeroDetails() {
           <FeatureFunding price={price} title={title} />
         </div>
         <div className="mx-auto">
-          <OfferedCare id={_id} />
+          <OfferedCare caretypes={caretypes} />
         </div>
+
         <div>
           <Facilities />
         </div>

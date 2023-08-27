@@ -132,7 +132,7 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: '/dashboard/update-feature',
+        path: '/dashboard/update-feature/:id',
         element: (
           <PrivateRoute>
             <UpdateFeature />

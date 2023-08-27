@@ -1,14 +1,11 @@
-import { api } from "../api/apiSlice";
+import { api } from '../api/apiSlice';
 
 const careTypeApi = api.injectEndpoints({
   endpoints: builder => ({
-    getAllCareTypes: builder.query({
-      query: id => `careTypes/${id}`,
-    }),
     addCareType: builder.mutation({
-      query: data => ({
-        url: `careTypes/add-types`,
-        method: 'POST',
+      query: ({ id, data }) => ({
+        url: `careHome/all-careHome/${id}`,
+        method: 'PUT',
         body: data,
       }),
       invalidatesTags: ['careTypes'],
@@ -16,4 +13,4 @@ const careTypeApi = api.injectEndpoints({
   }),
 });
 
-export const { useAddCareTypeMutation, useGetAllCareTypesQuery } = careTypeApi;
+export const { useAddCareTypeMutation } = careTypeApi;
