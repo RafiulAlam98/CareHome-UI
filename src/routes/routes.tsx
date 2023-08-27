@@ -16,6 +16,7 @@ import PrivateRoute from './PrivateRoutes';
 import SignUp from '../pages/SignUp/SignUp';
 import TourInformation from '../components/BookATour/TourInformation';
 import TourLists from '../pages/Dashboard/TourLists/TourLists';
+import UpdateFeature from '../pages/Dashboard/UpdateFeature/UpdateFeature';
 import UserList from '../pages/Dashboard/UserList/UserList';
 import Websites from '../pages/Websites/Websites';
 import { createBrowserRouter } from 'react-router-dom';
@@ -127,6 +128,14 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddCareTypes />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/dashboard/update-feature',
+        element: (
+          <PrivateRoute>
+            <UpdateFeature />
           </PrivateRoute>
         ),
       },

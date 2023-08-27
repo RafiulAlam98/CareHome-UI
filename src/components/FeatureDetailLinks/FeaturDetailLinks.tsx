@@ -28,7 +28,7 @@ export default function HeroDetailsLink({ id, website }: any) {
             <Link to={`/dashboard/award/${id}`}>Add an Award</Link>
           </button>
           <button className="bg-[#008636] text-sm text-white text-semibold font-normal px-2 py-1">
-            <Link to={`/dashboard/care-types/${id}`}>Add Care Types</Link>
+            <Link to={`/dashboard/update-feature`}>Update Care Home</Link>
           </button>
         </>
       )}

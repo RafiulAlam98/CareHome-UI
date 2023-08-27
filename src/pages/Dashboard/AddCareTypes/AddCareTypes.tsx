@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import Loading from '../../../components/Loading/Loading';
+import { toast } from 'react-hot-toast';
+import { useAddCareTypeMutation } from '../../../redux/careTypes/careTypeApi';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 
@@ -8,12 +11,20 @@ export default function AddCareTypes() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
   const id = useParams();
-  console.log(id.id);
+  const [addCareType, { isLoading, isError }] = useAddCareTypeMutation();
 
   const onSubmit = (data: any) => {
     console.log(data);
+    addCareType(data).then((res: any) => {
+      console.log(res.message);
+      if (res.data.statusCode === 200) {
+        toast(res.data.message);
+        reset();
+      }
+    });
   };
   return (
     <div className="min-h-screen">
@@ -41,7 +52,7 @@ export default function AddCareTypes() {
               <span className="label-text text-black">Type of Care</span>
             </label>
             <input
-              {...register('careType', {
+              {...register('careTypes', {
                 required: 'careType is required',
               })}
               type="text"
@@ -53,12 +64,16 @@ export default function AddCareTypes() {
           </div>
         </div>
 
-        <input
-          type="submit"
-          className="btn btn-sm mt-4 w-1/3 btn-accent text-white my-3"
-        />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <input
+            type="submit"
+            className="btn btn-sm mt-4 w-1/3 btn-accent text-white my-3"
+          />
+        )}
       </form>
-      {/* {isError && <p>Something Went wrong</p>} */}
+      {isError && <p>Something Went wrong</p>}
     </div>
   );
 }

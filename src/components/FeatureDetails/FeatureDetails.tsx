@@ -1,16 +1,17 @@
 import { Link, useParams } from "react-router-dom";
-import { useGetSingleFeatureQuery } from "../../redux/features/featureApi";
-import Loading from "../Loading/Loading";
-import HeroDetailsLink from "../FeatureDetailLinks/FeaturDetailLinks";
-import FeatureImages from "../FeatueImages/FeatureImages";
-import ProfessionalInfo from "../ProfessionalInfo/ProfessionalInfo";
-import FeatureFunding from "../FeatureFunding/FeatureFunding";
-import Performance from "../Performance/Performance";
-import Reviews from "../Reviews/Reviews";
-import Award from "../Award/Award";
-import NewsEvent from "../NewsEvent/NewsEvent";
-import OfferedCare from "../OfferedCare/OfferedCare";
-import Facilities from "../Facilities/Facilities";
+
+import Award from '../Award/Award';
+import Facilities from '../Facilities/Facilities';
+import FeatureFunding from '../FeatureFunding/FeatureFunding';
+import FeatureImages from '../FeatueImages/FeatureImages';
+import HeroDetailsLink from '../FeatureDetailLinks/FeaturDetailLinks';
+import Loading from '../Loading/Loading';
+import NewsEvent from '../NewsEvent/NewsEvent';
+import OfferedCare from '../OfferedCare/OfferedCare';
+import Performance from '../Performance/Performance';
+import ProfessionalInfo from '../ProfessionalInfo/ProfessionalInfo';
+import Reviews from '../Reviews/Reviews';
+import { useGetSingleFeatureQuery } from '../../redux/features/featureApi';
 
 const icons = [
   {
@@ -37,12 +38,13 @@ const icons = [
 
 export default function HeroDetails() {
   const id = useParams();
+  console.log(id);
 
   const { data: details, isLoading } = useGetSingleFeatureQuery(id.id);
   if (isLoading) {
     return <Loading />;
   }
-  // console.log(details.data);
+  console.log(details.data);
   const images = details.data.img;
   const {
     _id,
@@ -81,14 +83,14 @@ export default function HeroDetails() {
         </button>
         <button className=" ml-5 text-sm border-b-2 border-b-black">
           <Link to={`/reviews/${_id}`}>
-            <i className="fa-regular fa-pen-to-square mr-1  font-normal"></i>{" "}
+            <i className="fa-regular fa-pen-to-square mr-1  font-normal"></i>{' '}
             Submit a Review
           </Link>
         </button>
       </div>
 
       <div>
-        {icons.map((icon) => (
+        {icons.map(icon => (
           <button
             key={icon.id}
             className="mx-2 text-2xl my-2 hover: text-[#2073BD]"
@@ -116,14 +118,13 @@ export default function HeroDetails() {
           <FeatureFunding price={price} title={title} />
         </div>
         <div className="mx-auto">
-          <OfferedCare />
+          <OfferedCare id={_id} />
         </div>
         <div>
           <Facilities />
         </div>
       </div>
 
-      
       <Reviews id={_id} />
       <Performance performance={performance} />
       <Award id={_id} />

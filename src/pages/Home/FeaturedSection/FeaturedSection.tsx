@@ -15,7 +15,7 @@ export default function FeaturedSection() {
   if (isLoading) {
     return <span className="loading loading-spinner loading-lg"></span>;
   }
-  let features = featureData.data;
+  const features = featureData.data;
 
   const newFilteredList = features.filter((item: any) => {
     if (selectedField === item.title) {

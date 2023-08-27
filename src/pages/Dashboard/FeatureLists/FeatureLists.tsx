@@ -1,11 +1,13 @@
  /* eslint-disable @typescript-eslint/no-explicit-any */
-import { toast } from "react-hot-toast";
-import Loading from "../../../components/Loading/Loading";
+
 import {
   useDeleteSingleCareHomeMutation,
   useGetFeatureQuery,
-} from "../../../redux/features/featureApi";
-import { useNavigate } from "react-router-dom";
+} from '../../../redux/features/featureApi';
+
+import Loading from '../../../components/Loading/Loading';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export default function FeatureLists() {
   const { data, isLoading } = useGetFeatureQuery(undefined);
@@ -20,43 +22,65 @@ export default function FeatureLists() {
     deleteSingleCareHome(id).then((res: any) => {
       if (res.data.statusCode === 200) {
         toast(res.data.message);
-        navigate("/");
+        navigate('/');
       }
     });
   };
 
+  const handleUpdate = (id: string) => {
+    console.log(id);
+  };
+
   const features = data.data;
   return (
-    <div className="min-h-screen">
-      {" "}
-      <h2 className="text-2xl text-teal-600 my-6 text-center">
-        <span className="border-b-2 border-teal-300 ">CARE HOME LIST </span>
+    <div className="min-h-screen w-2/3 mx-auto">
+      {' '}
+      <h2 className="text-3xl text-orange-600 my-10 text-center font-serif font-semibold ">
+        <span className="border-b-2 border-orange-600 ">CARE HOME LIST </span>
       </h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Location</th>
-              <th>Authority</th>
-              <th>Incharge Officer</th>
+              <th className="text-xl text-slate-700">Name</th>
+              <th className="text-xl text-slate-700">Location</th>
+              <th className="text-xl text-slate-700">Authority</th>
+              <th className="text-xl text-slate-700">Incharge Officer</th>
             </tr>
           </thead>
           {features.map((feature: any, index: number) => (
             <tbody key={feature._id}>
               <tr>
-                <th>{index + 1}</th>
-                <td>{feature.title}</td>
-                <td>{feature.location}</td>
-                <td>{feature.localAuthority}</td>
-                <td>{feature.personIncharge}</td>
+                <th className="text-lg font-semibold text-purple-600">
+                  {index + 1}
+                </th>
+                <td className="text-lg font-semibold text-purple-600">
+                  {feature.title}
+                </td>
+                <td className="text-lg font-semibold text-purple-600">
+                  {feature.location}
+                </td>
+                <td className="text-lg font-semibold text-purple-600">
+                  {feature.localAuthority}
+                </td>
+                <td className="text-lg font-semibold text-purple-600">
+                  {feature.personIncharge}
+                </td>
                 <td>
                   <button
                     onClick={() => handleDelete(feature._id)}
-                    className="bg-red-600 text-white p-2 rounded "
+                    className="bg-red-600 text-white p-2 rounded hover-red-700"
                   >
                     DELETE
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => handleUpdate(feature._id)}
+                    className="bg-[#059862] text-white p-2 rounded"
+                  >
+                    UPDATE
                   </button>
                 </td>
               </tr>

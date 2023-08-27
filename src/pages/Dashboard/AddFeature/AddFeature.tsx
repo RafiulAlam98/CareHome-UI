@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Controller, useForm } from "react-hook-form";
-import { useAddFeatureMutation } from "../../../redux/features/featureApi";
-import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
-import Loading from "../../../components/Loading/Loading";
+
+import { Controller, useForm } from 'react-hook-form';
+
+import Loading from '../../../components/Loading/Loading';
+import { toast } from 'react-hot-toast';
+import { useAddFeatureMutation } from '../../../redux/features/featureApi';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddFeature() {
   const [addFeature, { isError, isLoading }] = useAddFeatureMutation();
@@ -22,39 +24,41 @@ export default function AddFeature() {
       if (res.data.statusCode === 200) {
         toast(res.data.message);
         reset();
-        navigate("/");
+        navigate('/');
       }
     });
   };
   return (
     <div className="min-h-screen">
-      <h2 className="text-3xl text-teal-600 my-6">
-        <span className="border-b-2 border-teal-300">Add New Care Home </span>
+      <h2 className="text-3xl text-teal-600 my-6 text-center">
+        <span className="border-b-2 border-teal-300 ">Add New Care Home </span>
       </h2>
       <form className="text-center" onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4 w-2/3 mx-auto">
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">title?</span>
+              <span className="label-text text-black">Title</span>
             </label>
             <input
-              {...register("title", {
-                required: "title Address is required",
+              placeholder={`Title in text`}
+              {...register('title', {
+                required: 'title Address is required',
               })}
               type="text"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">location?</span>
+              <span className="label-text text-black">Location</span>
             </label>
             <input
-              {...register("location", {
-                required: "location is required",
+              placeholder={`Location in text`}
+              {...register('location', {
+                required: 'location is required',
               })}
               type="location"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
             {errors.location && (
               <span className="text-black">This field is required</span>
@@ -62,14 +66,15 @@ export default function AddFeature() {
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">owner?</span>
+              <span className="label-text text-black">Owner</span>
             </label>
             <input
-              {...register("owner", {
-                required: "owner is required",
+              placeholder={`Owner In text`}
+              {...register('owner', {
+                required: 'owner is required',
               })}
               type="owner"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
             {errors.owner && (
               <span className="text-black">This field is required</span>
@@ -77,14 +82,15 @@ export default function AddFeature() {
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">price?</span>
+              <span className="label-text text-black">Price</span>
             </label>
             <input
-              {...register("price", {
-                required: "price is required",
+              placeholder={`Price in number`}
+              {...register('price', {
+                required: 'price is required',
               })}
               type="price"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
             {errors.price && (
               <span className="text-black">This field is required</span>
@@ -92,14 +98,15 @@ export default function AddFeature() {
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">personIncharge?</span>
+              <span className="label-text text-black">Person In Charge</span>
             </label>
             <input
-              {...register("personIncharge", {
-                required: "personIncharge is required",
+              placeholder={`Person In Charge in text`}
+              {...register('personIncharge', {
+                required: 'personIncharge is required',
               })}
               type="personIncharge"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
             {errors.personIncharge && (
               <span className="text-black">This field is required</span>
@@ -107,14 +114,15 @@ export default function AddFeature() {
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">localAuthority?</span>
+              <span className="label-text text-black">Local Authority</span>
             </label>
             <input
-              {...register("localAuthority", {
-                required: "localAuthority is required",
+              placeholder={`Local Authority in text`}
+              {...register('localAuthority', {
+                required: 'localAuthority is required',
               })}
               type="text"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
             {errors.localAuthority && (
               <span className="text-black">This field is required</span>
@@ -123,38 +131,43 @@ export default function AddFeature() {
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
               <span className="label-text text-black">
-                admissionRestrictionAge?
+                Admission Restriction Age
               </span>
             </label>
             <input
-              {...register("admissionRestrictionAge", {
-                required: "admissionRestrictionAge Address is required",
+              placeholder={`Admission Restriction age in text`}
+              {...register('admissionRestrictionAge', {
+                required: 'admissionRestrictionAge Address is required',
               })}
               type="text"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">quote?</span>
+              <span className="label-text text-black">Related Quote</span>
             </label>
             <textarea
-              {...register("quote", {
-                required: "quote Address is required",
+              placeholder={`Related Quote in text`}
+              cols={50}
+              rows={4}
+              {...register('quote', {
+                required: 'quote Address is required',
               })}
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">website?</span>
+              <span className="label-text text-black">Website</span>
             </label>
             <input
-              {...register("website", {
-                required: "website is required",
+              placeholder={`Website in Link`}
+              {...register('website', {
+                required: 'website is required',
               })}
               type="website"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered rounded input-md w-full "
             />
             {errors.website && (
               <span className="text-black">This field is required</span>
@@ -162,14 +175,15 @@ export default function AddFeature() {
           </div>
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">logo?</span>
+              <span className="label-text text-black">Care Home Logo</span>
             </label>
             <input
-              {...register("logo", {
-                required: "logo is required",
+              placeholder={`Logo in Link`}
+              {...register('logo', {
+                required: 'logo is required',
               })}
               type="text"
-              className="input input-bordered  input-sm w-full "
+              className="input input-bordered rounded  input-md w-full "
             />
             {errors.logo && (
               <span className="text-black">This field is required</span>
@@ -178,28 +192,32 @@ export default function AddFeature() {
 
           <div className="form-control lg:w-full mx-auto ">
             <label className="label">
-              <span className="label-text text-black">img?</span>
+              <span className="label-text text-black">Care Home Img</span>
             </label>
             <input
-              {...register("img", {
-                required: "img is required",
+              placeholder={`Image in Link`}
+              {...register('img', {
+                required: 'img is required',
               })}
               type="text"
-              className="input input-bordered  input-sm w-full "
+              className="input input-bordered rounded  input-md w-full "
             />
             {errors.img && (
               <span className="text-black">This field is required</span>
             )}
           </div>
           <div className="form-control lg:w-full mx-auto ">
-            <label>Total Rooms:</label>
+            <label className="label">
+              <span className="label-text text-black">Total Rooms </span>
+            </label>
             <Controller
               name="room.totalRoom"
               control={control}
               defaultValue={0}
               render={({ field }) => (
                 <input
-                  className="input input-bordered input-sm w-full "
+                  placeholder={`Total Room in number`}
+                  className="input input-bordered rounded input-md w-full"
                   {...field}
                 />
               )}
@@ -207,29 +225,37 @@ export default function AddFeature() {
           </div>
 
           <div className="form-control lg:w-full mx-auto ">
-            <label>Room Type:</label>
+            <label className="label">
+              <span className="label-text text-black">Room Type</span>
+            </label>
+
             <Controller
               name="room.roomTypes"
               control={control}
               defaultValue=""
               render={({ field }) => (
                 <input
-                  className="input input-bordered input-sm w-full "
+                  placeholder={`Room Type ex: single`}
+                  className="input input-bordered rounded input-md w-full "
                   {...field}
                 />
               )}
             />
           </div>
           <div className="form-control lg:w-full mx-auto ">
-            <label>Caring:</label>
+            <label className="label">
+              <span className="label-text text-black">Caring Service</span>
+            </label>
+
             <Controller
               name="performance.caring"
               control={control}
               defaultValue=""
               render={({ field }) => (
                 <input
+                  placeholder={`Performance ex: Good`}
                   {...field}
-                  className="input input-bordered input-sm w-full "
+                  className="input input-bordered rounded input-md w-full "
                   type="text"
                 />
               )}
@@ -237,15 +263,19 @@ export default function AddFeature() {
           </div>
 
           <div className="form-control lg:w-full mx-auto ">
-            <label>Effective:</label>
+            <label className="label">
+              <span className="label-text text-black">Effectiveness</span>
+            </label>
+
             <Controller
               name="performance.effective"
               control={control}
               defaultValue=""
               render={({ field }) => (
                 <input
+                  placeholder={`Effectiveness in text`}
                   {...field}
-                  className="input input-bordered input-sm w-full "
+                  className="input input-bordered rounded input-md w-full "
                   type="text"
                 />
               )}
@@ -253,15 +283,19 @@ export default function AddFeature() {
           </div>
 
           <div className="form-control lg:w-full mx-auto ">
-            <label>Responsive:</label>
+            <label className="label">
+              <span className="label-text text-black">Responsiveness</span>
+            </label>
+
             <Controller
               name="performance.responsive"
               control={control}
               defaultValue=""
               render={({ field }) => (
                 <input
+                  placeholder={`Responsiveness in text`}
                   {...field}
-                  className="input input-bordered input-sm w-full "
+                  className="input input-bordered rounded input-md w-full "
                   type="text"
                 />
               )}
@@ -269,15 +303,19 @@ export default function AddFeature() {
           </div>
 
           <div className="form-control lg:w-full mx-auto ">
-            <label>Safe:</label>
+            <label className="label">
+              <span className="label-text text-black">Safety Quality</span>
+            </label>
+
             <Controller
               name="performance.safe"
               control={control}
               defaultValue=""
               render={({ field }) => (
                 <input
+                  placeholder={`Safety Quality in text`}
                   {...field}
-                  className="input input-bordered input-sm w-full "
+                  className="input input-bordered rounded input-md w-full "
                   type="text"
                 />
               )}
@@ -290,10 +328,12 @@ export default function AddFeature() {
         ) : (
           <input
             type="submit"
-            className="btn btn-sm mt-4 w-1/3 btn-accent text-white my-3"
+            className="btn btn-md rounded w-1/3 btn-accent text-white my-8 "
           />
         )}
-        {isError && <p className="text-red-600">Something went wrong</p>}
+        {isError && (
+          <p className="text-red-600 text-xl mt-8">Something went wrong</p>
+        )}
       </form>
     </div>
   );
