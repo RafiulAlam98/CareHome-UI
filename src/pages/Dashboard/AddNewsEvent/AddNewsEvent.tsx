@@ -33,15 +33,15 @@ export default function AddNewsEvent() {
   return (
     <div className="min-h-screen mx-auto">
       {' '}
-      <h2 className="text-3xl text-teal-600 my-6 text-center">
-        <span className="border-b-2 border-teal-300 ">Add NewsEvent</span>
+      <h2 className="text-3xl text-orange-600 my-10 text-center font-serif font-semibold">
+        <span className="border-b-2 border-orange-600 ">Add NewsEvent</span>
       </h2>
       <form className="text-center" onSubmit={handleSubmit(onSubmit)}>
-        <div className="">
+        <div className=" w-2/3 mx-auto">
           {' '}
           <div className="form-control  mx-auto ">
             <label className="label">
-              <span className="label-text text-red-600">Care-home id</span>
+              <span className="label-text ">Care home id</span>
             </label>
             <input
               defaultValue={id.id}
@@ -49,37 +49,37 @@ export default function AddNewsEvent() {
                 required: 'homeId Address is required',
               })}
               type="text"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered input-md rounded w-full "
             />
           </div>
           <div className="form-control  mx-auto ">
             <label className="label">
-              <span className="label-text text-red-600">Total Event</span>
+              <span className="label-text ">Total Event</span>
             </label>
             <input
               {...register('totalEvent', {
                 required: 'totalEvent is required',
               })}
-              type="number"
-              className="input input-sm input-bordered  w-full "
+              placeholder={`Total Event ex: 1`}
+              className="input input-md rounded input-bordered  w-full "
             />
             {errors.totalEvent && (
-              <span className="text-red-600">This field is required</span>
+              <span className="">This field is required</span>
             )}
           </div>
           <div className="form-control  mx-auto ">
             <label className="label">
-              <span className="label-text text-red-600">Total News</span>
+              <span className="label-text ">Total News</span>
             </label>
             <input
+              placeholder={`Total News ex: 1`}
               {...register('totalNews', {
                 required: 'total News is required',
               })}
-              type="number"
-              className="input input-sm input-bordered  w-full "
+              className="input input-md rounded input-bordered  w-full "
             />
             {errors.totalNews && (
-              <span className="text-red-600">This field is required</span>
+              <span className="">This field is required</span>
             )}
           </div>
         </div>

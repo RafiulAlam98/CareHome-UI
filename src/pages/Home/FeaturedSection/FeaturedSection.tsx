@@ -18,13 +18,19 @@ export default function FeaturedSection() {
   const features = featureData?.data;
 
   const newFilteredList = features.filter((item: any) => {
-    if (selectedField === item.title) {
-      return item;
-    } else if (selectedField === 'all') {
-      return item;
-    }
+    const careFields = item.caretypes;
+    const careField = careFields?.find((care: any) => {
+      if (selectedField === care.careTypes) {
+        return care;
+      } else if (selectedField === 'all') {
+        return care;
+      }
+    });
+    // console.log(careField);
+    return careField;
   });
 
+  // console.log(newFilteredList);
   const filterableData = (payload: any) => {
     setSelectedField(payload);
   };

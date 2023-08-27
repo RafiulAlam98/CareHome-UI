@@ -1,6 +1,63 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+const careTypes = [
+  {
+    id: 1,
+    name: 'Nursing',
+  },
+  {
+    id: 2,
+    name: 'Residential',
+  },
+  {
+    id: 3,
+    name: 'Elderly',
+  },
+  {
+    id: 4,
+    name: 'Learning Disability',
+  },
+  {
+    id: 5,
+    name: 'Dementia',
+  },
+  {
+    id: 6,
+    name: 'Short Term/Respite',
+  },
+  {
+    id: 7,
+    name: 'Physical Disability',
+  },
+  {
+    id: 8,
+    name: 'Palliative Care',
+  },
+  {
+    id: 9,
+    name: 'Mental Health',
+  },
+  {
+    id: 10,
+    name: 'Detention under Mental Health Act',
+  },
+  {
+    id: 11,
+    name: 'Younger Adults',
+  },
+  {
+    id: 12,
+    name: 'Sensory Impairment',
+  },
+  {
+    id: 13,
+    name: 'Eating Disorder',
+  },
+  {
+    id: 14,
+    name: 'Substance Misuse',
+  },
+];
 export default function SearchAndFilter({
-  features,
   filterableData,
   searchText,
   setSearchText,
@@ -17,9 +74,9 @@ export default function SearchAndFilter({
         onChange={e => selectedField(e)}
       >
         <option value="all">All Types of Care Home</option>
-        {features?.map((item: any) => (
-          <option key={item._id} value={item?.title}>
-            {item.title}
+        {careTypes?.map((item: any) => (
+          <option key={item.id} value={item?.name}>
+            {item.name}
           </option>
         ))}
       </select>

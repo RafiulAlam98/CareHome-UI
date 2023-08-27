@@ -31,16 +31,16 @@ export default function AddAwards() {
     });
   };
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mb-10">
       {' '}
-      <h2 className="text-3xl text-teal-600 my-6 text-center">
-        <span className="border-b-2 border-teal-300">Add An Award </span>
+      <h2 className="text-3xl text-orange-600 my-30 text-center font-serif font-semibold mt-5 mb-8">
+        <span className="border-b-2 border-orange-600">Add An Award </span>
       </h2>
       <form className="" onSubmit={handleSubmit(onSubmit)}>
-        <div className="">
+        <div className="w-1/2 mx-auto mb-5">
           <div className="form-control mx-auto  ">
             <label className="label">
-              <span className="label-text text-black">homeId?</span>
+              <span className="label-text text-black">Home Id</span>
             </label>
             <input
               defaultValue={id.id}
@@ -48,19 +48,20 @@ export default function AddAwards() {
                 required: 'homeId  is required',
               })}
               type="text"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered input-md rounded w-full my-3"
             />
           </div>
           <div className="form-control mx-auto   ">
             <label className="label">
-              <span className="label-text text-black">awardLogo?</span>
+              <span className="label-text text-black">Award Logo</span>
             </label>
             <input
+              placeholder={`Award Logo ex: Link`}
               {...register('awardLogo', {
                 required: 'awardLogo is required',
               })}
-              type="awardLogo"
-              className="input input-bordered input-sm w-full "
+              type="text"
+              className="input input-bordered input-md rounded w-full my-3"
             />
             {errors.location && (
               <span className="text-black">This field is required</span>
@@ -68,14 +69,15 @@ export default function AddAwards() {
           </div>
           <div className="form-control mx-auto   ">
             <label className="label">
-              <span className="label-text text-black">awardTitle?</span>
+              <span className="label-text text-black">Award Title</span>
             </label>
             <input
+              placeholder={`Award Title ex: Begam Rokaya`}
               {...register('awardTitle', {
                 required: 'awardTitle is required',
               })}
-              type="awardTitle"
-              className="input input-bordered input-sm w-full "
+              type="text"
+              className="input input-bordered input-md rounded w-full my-3"
             />
             {errors.awardTitle && (
               <span className="text-black">This field is required</span>
@@ -83,14 +85,14 @@ export default function AddAwards() {
           </div>
           <div className="form-control mx-auto   ">
             <label className="label">
-              <span className="label-text text-black">date?</span>
+              <span className="label-text text-black">Date</span>
             </label>
             <input
               {...register('date', {
                 required: 'date is required',
               })}
               type="date"
-              className="input input-bordered input-sm w-full "
+              className="input input-bordered input-md rounded w-full my-3"
             />
             {errors.date && (
               <span className="text-black">This field is required</span>
@@ -98,13 +100,14 @@ export default function AddAwards() {
           </div>
           <div className="form-control mx-auto   ">
             <label className="label">
-              <span className="label-text text-black">awardDescription?</span>
+              <span className="label-text text-black">Award Description</span>
             </label>
             <textarea
+              placeholder={`Description write here`}
               {...register('awardDescription', {
                 required: 'awardDescription is required',
               })}
-              className="input input-bordered  w-full "
+              className="input input-bordered rounded my-3  w-full "
             />
             {errors.awardDescription && (
               <span className="text-black">This field is required</span>
@@ -114,15 +117,15 @@ export default function AddAwards() {
           {isLoading ? (
             <Loading />
           ) : (
-            <div className="mx-auto w-1/3">
+            <div className="mx-auto w-1/2">
               {' '}
               <input
                 type="submit"
-                className="btn btn-sm mt-4 w-full btn-accent text-white my-3"
+                className="btn btn-sm  w-full btn-accent text-white mt-3 mb-6"
               />
             </div>
           )}
-          {isError && <p className="text-red-600">Something went wrong</p>}
+          {isError && <p className="text-red-600 mb-6">Something went wrong</p>}
         </div>
       </form>
     </div>

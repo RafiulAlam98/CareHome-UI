@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useForm } from "react-hook-form";
-import { useAddtourMutation } from "../../redux/tour/tourApi";
-import { toast } from "react-hot-toast";
-import Loading from "../Loading/Loading";
+
+import Loading from '../Loading/Loading';
+import { toast } from 'react-hot-toast';
+import { useAddtourMutation } from '../../redux/tour/tourApi';
+import { useForm } from 'react-hook-form';
 
 export default function TourInformation() {
   const [addTour, { isLoading, isError }] = useAddtourMutation();
@@ -24,37 +25,37 @@ export default function TourInformation() {
     });
   };
   return (
-    <div className="min-h-screen">
+    <div className=" min-h-screen">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="text-center text-red-400 text-xl mb-6 ">
-          Please Submit Your Information
+        <h2 className="text-3xl text-orange-600 mt-5 mb-10  text-center font-serif font-semibold ">
+          <span className="border-b-2 border-orange-600 ">
+            Please Submit Your Information
+          </span>
         </h2>
         <input
-          defaultValue=""
-          placeholder="name"
-          {...register("name", { required: true })}
-          className="input rounded-sm input-bordered input-accent w-2/3 my-1 input-sm block mx-auto"
+          placeholder="your name ex: john doe"
+          {...register('name', { required: true })}
+          className="input rounded input-bordered input-accent w-1/3 my-5 input-md  block mx-auto"
         />
         {errors.name && (
-          <span className="text-red-600">This field is required</span>
+          <div className="text-red-600 text-center">This field is required</div>
         )}
         <input
-          defaultValue=""
-          placeholder="email"
-          {...register("email", { required: true })}
-          className="input rounded-sm input-bordered input-accent w-2/3 my-1 input-sm block mx-auto"
+          placeholder="your email ex: @example.com"
+          {...register('email', { required: true })}
+          className="input rounded input-bordered input-accent w-1/3 my-5 input-md  block mx-auto"
         />
         {errors.email && (
-          <span className="text-red-600">This field is required</span>
+          <div className="text-red-600 text-center">This field is required</div>
         )}
         <input
-          defaultValue=""
-          placeholder="phone"
-          {...register("phone", { required: true })}
-          className="input rounded-sm input-bordered input-accent w-2/3 my-1 input-sm block mx-auto"
+          placeholder="your phone ex: 0123.."
+          type="number"
+          {...register('phone', { required: true })}
+          className="input rounded input-bordered input-accent w-1/3 my-5 input-md  block mx-auto"
         />
         {errors.phone && (
-          <span className="text-red-600">This field is required</span>
+          <div className="text-red-600 text-center">This field is required</div>
         )}
         {isLoading ? (
           <Loading />
@@ -62,7 +63,7 @@ export default function TourInformation() {
           <>
             <input
               type="submit"
-              className="border block w-1/3 mt-2 hover:bg-black py-1 text-white  rounded-md bg-[#2073BD] mx-auto"
+              className="border block w-1/4 mt-2 hover:bg-black py-1 text-white  rounded-md bg-[#2073BD] mx-auto"
             />
           </>
         )}

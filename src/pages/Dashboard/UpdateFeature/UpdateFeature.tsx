@@ -28,8 +28,8 @@ export default function UpdateFeature() {
   return (
     <div className="min-h-screen">
       {' '}
-      <h2 className="text-3xl text-teal-600 my-6 text-center">
-        <span className="border-b-2 border-teal-300">Update CareHome</span>
+      <h2 className="text-3xl text-orange-600 my-30 text-center font-serif font-semibold mt-5 mb-8">
+        <span className="border-b-2 border-orange-600">Update CareHome</span>
       </h2>
       <form className="" onSubmit={handleSubmit(onSubmit)}>
         <div className="w-1/2 mx-auto">
@@ -52,7 +52,7 @@ export default function UpdateFeature() {
           {isLoading ? (
             <Loading />
           ) : (
-            <div className="mx-auto w-1/3">
+            <div className="mx-auto w-1/2">
               <input
                 type="submit"
                 className="btn btn-sm mt-4 w-full btn-accent text-white my-3"

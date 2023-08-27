@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function BookATour() {
   return (
     <>
-      <button className="bg-[#FF3547] text-sm text-white text-semibold font-normal px-2 py-1">
+      <button className="bg-[#FF3547] text-sm text-white text-semibold font-normal px-2 py-1 rounded">
         <Link to="/tour">Book a Tour</Link>
       </button>
     </>

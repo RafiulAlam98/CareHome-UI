@@ -18,7 +18,7 @@ export default function DashboardMain() {
           </Link>
 
           <h1 className="text-2xl my-3 text-center text-white font-semibold">
-            Dashboard
+            ADMIN DASHBOARD
           </h1>
 
           <Link to="/dashboard">

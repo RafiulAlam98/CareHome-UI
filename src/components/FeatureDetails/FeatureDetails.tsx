@@ -78,11 +78,11 @@ export default function HeroDetails() {
         </div>
       </div>
 
-      <div className="flex justify-start items-center ml-2">
-        <button className="text-sm border-b-2 border-b-black font-normal">
+      <div className="flex justify-start items-center ml-2 my-1">
+        {/* <button className="text-sm border-b-2 border-b-black font-normal">
           <i className="fa-solid fa-heart mr-1"></i> Save
-        </button>
-        <button className=" ml-5 text-sm border-b-2 border-b-black">
+        </button> */}
+        <button className=" text-sm border-b-2 border-b-black">
           <Link to={`/reviews/${_id}`}>
             <i className="fa-regular fa-pen-to-square mr-1  font-normal"></i>{' '}
             Submit a Review

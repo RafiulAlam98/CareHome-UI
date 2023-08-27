@@ -30,8 +30,10 @@ export default function AddFeature() {
   };
   return (
     <div className="min-h-screen">
-      <h2 className="text-3xl text-teal-600 my-6 text-center">
-        <span className="border-b-2 border-teal-300 ">Add New Care Home </span>
+      <h2 className="text-3xl text-orange-600 my-10 text-center font-serif font-semibold ">
+        <span className="border-b-2 border-orange-600 ">
+          Add New Care Home{' '}
+        </span>
       </h2>
       <form className="text-center" onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-2 gap-4 w-2/3 mx-auto">
@@ -40,7 +42,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Title</span>
             </label>
             <input
-              placeholder={`Title in text`}
+              placeholder={`Title ex: Probin Care Home`}
               {...register('title', {
                 required: 'title Address is required',
               })}
@@ -53,7 +55,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Location</span>
             </label>
             <input
-              placeholder={`Location in text`}
+              placeholder={`Location ex: Mirpur, Dhaka`}
               {...register('location', {
                 required: 'location is required',
               })}
@@ -69,7 +71,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Owner</span>
             </label>
             <input
-              placeholder={`Owner In text`}
+              placeholder={`Owner ex: Shohag Hossain`}
               {...register('owner', {
                 required: 'owner is required',
               })}
@@ -85,7 +87,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Price</span>
             </label>
             <input
-              placeholder={`Price in number`}
+              placeholder={`Price ex: 1000`}
               {...register('price', {
                 required: 'price is required',
               })}
@@ -101,7 +103,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Person In Charge</span>
             </label>
             <input
-              placeholder={`Person In Charge in text`}
+              placeholder={`Person In Charge ex: Abir Mawla`}
               {...register('personIncharge', {
                 required: 'personIncharge is required',
               })}
@@ -117,7 +119,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Local Authority</span>
             </label>
             <input
-              placeholder={`Local Authority in text`}
+              placeholder={`Local Authority ex: BRB Foundation`}
               {...register('localAuthority', {
                 required: 'localAuthority is required',
               })}
@@ -135,7 +137,7 @@ export default function AddFeature() {
               </span>
             </label>
             <input
-              placeholder={`Admission Restriction age in text`}
+              placeholder={`Admission Restriction age ex: 60`}
               {...register('admissionRestrictionAge', {
                 required: 'admissionRestrictionAge Address is required',
               })}
@@ -148,7 +150,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Related Quote</span>
             </label>
             <textarea
-              placeholder={`Related Quote in text`}
+              placeholder={`Related Quote ex:Quote`}
               cols={50}
               rows={4}
               {...register('quote', {
@@ -162,7 +164,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Website</span>
             </label>
             <input
-              placeholder={`Website in Link`}
+              placeholder={`Website ex: http://....`}
               {...register('website', {
                 required: 'website is required',
               })}
@@ -178,7 +180,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Care Home Logo</span>
             </label>
             <input
-              placeholder={`Logo in Link`}
+              placeholder={`Logo ex: http://....`}
               {...register('logo', {
                 required: 'logo is required',
               })}
@@ -195,7 +197,7 @@ export default function AddFeature() {
               <span className="label-text text-black">Care Home Img</span>
             </label>
             <input
-              placeholder={`Image in Link`}
+              placeholder={`Image ex: http://....`}
               {...register('img', {
                 required: 'img is required',
               })}
@@ -216,7 +218,7 @@ export default function AddFeature() {
               defaultValue={0}
               render={({ field }) => (
                 <input
-                  placeholder={`Total Room in number`}
+                  placeholder={`Total Room ex: 10`}
                   className="input input-bordered rounded input-md w-full"
                   {...field}
                 />
@@ -235,7 +237,7 @@ export default function AddFeature() {
               defaultValue=""
               render={({ field }) => (
                 <input
-                  placeholder={`Room Type ex: single`}
+                  placeholder={`Room Type ex: Deluxe`}
                   className="input input-bordered rounded input-md w-full "
                   {...field}
                 />
@@ -253,7 +255,7 @@ export default function AddFeature() {
               defaultValue=""
               render={({ field }) => (
                 <input
-                  placeholder={`Performance ex: Good`}
+                  placeholder={`Caring ex: Good`}
                   {...field}
                   className="input input-bordered rounded input-md w-full "
                   type="text"
@@ -273,7 +275,7 @@ export default function AddFeature() {
               defaultValue=""
               render={({ field }) => (
                 <input
-                  placeholder={`Effectiveness in text`}
+                  placeholder={`Effectiveness ex: Good`}
                   {...field}
                   className="input input-bordered rounded input-md w-full "
                   type="text"
@@ -293,7 +295,7 @@ export default function AddFeature() {
               defaultValue=""
               render={({ field }) => (
                 <input
-                  placeholder={`Responsiveness in text`}
+                  placeholder={`Responsiveness ex: Good`}
                   {...field}
                   className="input input-bordered rounded input-md w-full "
                   type="text"
@@ -313,7 +315,7 @@ export default function AddFeature() {
               defaultValue=""
               render={({ field }) => (
                 <input
-                  placeholder={`Safety Quality in text`}
+                  placeholder={`Safety Quality ex: Best`}
                   {...field}
                   className="input input-bordered rounded input-md w-full "
                   type="text"

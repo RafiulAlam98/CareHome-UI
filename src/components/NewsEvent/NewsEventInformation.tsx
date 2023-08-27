@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+import Loading from '../Loading/Loading';
 import { toast } from "react-hot-toast";
-import { useDeleteNewsEventMutation } from "../../redux/newEvent/newEventApi";
-import Loading from "../Loading/Loading";
+import { useDeleteNewsEventMutation } from '../../redux/newEvent/newEventApi';
 import { useNavigate } from "react-router-dom";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default function NewsEventInformation({ event }: any) {
+  const role = localStorage.getItem('user');
+  console.log(role);
   const { totalEvent, totalNews } = event;
   const navigate = useNavigate();
   const [deleteNewsEvent, options] = useDeleteNewsEventMutation();
@@ -29,12 +31,14 @@ export default function NewsEventInformation({ event }: any) {
         <>
           <h1 className="font-medium text-lg my-1">Total Event {totalEvent}</h1>
           <h3 className="mb-5">total news {totalNews}</h3>
-          <button
-            onClick={() => handleDeleteEvent(event)}
-            className="text-sm bg-red-600 hover:bg-red-800 text-white rounded px-3 py-1"
-          >
-            Delete Event
-          </button>
+          {role === 'admin' && (
+            <button
+              onClick={() => handleDeleteEvent(event)}
+              className="text-sm bg-red-600 hover:bg-red-800 text-white rounded px-3 py-1"
+            >
+              Delete Event
+            </button>
+          )}
         </>
       ) : (
         <h2>There is no such event</h2>
