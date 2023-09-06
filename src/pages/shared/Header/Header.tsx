@@ -18,7 +18,7 @@ export default function Header() {
       <div className="header-container max-w-[1200px] mx-auto">
         <div className="">
           <Link to="/">
-            <img src={logo} alt="" className="w-48" />
+            <img src={logo} alt="" className="w-60" />
           </Link>
         </div>
       </div>
